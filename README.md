@@ -18,10 +18,9 @@ younyikim-playground/
 
 ### Applications
 
-현재 1개의 프로젝트가 있습니다.
+현재 2개의 프로젝트가 있습니다.
 
-<!-- 추후 추가 -->
-<!-- - All about my dog : 우리집 강아지 솜이를 소개하는 포트폴리오 웹 사이트입니다. -->
+- [All about my dog](https://github.com/younyikim/younyikim-playground/tree/main/apps/all-about-som) : 우리집 강아지 솜이를 소개하는 포트폴리오 웹 사이트입니다.
 
 - [Sample App](https://github.com/younyikim/younyikim-playground/tree/main/apps/sample-app) : Vite, React, Typescript 기반 테스트 웹 애플리케이션입니다.
 
