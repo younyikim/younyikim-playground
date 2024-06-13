@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <div>{getCommonText()}</div>
+      <div>{getCommonText()}22</div>
     </>
   );
 }
