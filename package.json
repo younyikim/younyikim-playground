@@ -7,6 +7,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "sample-app": "pnpm --filter sample-app",
+    "som:service": "pnpm --filter @all-about-som/service",
     "common": "pnpm --filter common"
   },
   "lint-staged": {
