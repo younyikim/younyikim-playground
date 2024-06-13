@@ -15,7 +15,10 @@ first_line=$(head -n1 "$COMMIT_MESSAGE_FILE_PATH")
 
 # 커밋 타입(feat) 추출
 # 예: first_line = "feat : some thing" -> type = feat
-type=$(echo "$first_line" | cut -d':' -f1 | xargs)
+type=$(echo "$first_line" | awk -F':' '{print $1}')
+
+# 공백 제거
+type=$(echo "$type" | sed 's/^ *//; s/ *$//')
 
 # 커밋 타입이 없는 경우 스크립트 종료
 if [ -z "$type" ]; then
@@ -26,7 +29,7 @@ fi
 
 # 커밋 메시지에 커밋 타입과 프로젝트명 추가
 # 예: first_line = feat : some thing -> new_first_line = feat (sample-app) : some thing
-new_first_line="$type($project_name): $(echo "$first_line" | cut -d' ' -f3-)"
+new_first_line="$type($project_name): $(echo "$first_line" | cut -d':' -f2- | sed 's/^ *//')"
 
 # 수정된 첫 번째 줄을 커밋 메시지 파일에 다시 씁니다.
 echo "$new_first_line" > "$COMMIT_MESSAGE_FILE_PATH"
