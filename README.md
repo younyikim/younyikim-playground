@@ -51,6 +51,16 @@ ex) `sample-app` 실행하기
 pnpm sample-app dev
 ```
 
+### 브랜치 관리 전략
+
+- [Trunk based Development](https://trunkbaseddevelopment.com/)을 기반으로 브랜치를 관리합니다.
+- `main` 브랜치 하나만 운영하며, 신규 기능은 피쳐 브랜치를 생성하여 작업하고 며칠 내로 `main`에 merge 합니다.
+
+##### 브랜치 네이밍 컨벤션
+
+- 신규 기능을 개발하는 브랜치는 `[프로젝트 명]/[prefix]` 형식으로 작성합니다.
+  ex) `sample-app/feat`, `sample-app/fix`
+
 ### Monorepo Project 템플릿 사용하기
 
 pnpm 기반 monorepo 템플릿으로 프로젝트를 시작하고 싶다면? [younyikim/pnpm-monorepo 레포지토리 바로가기](https://github.com/younyikim/pnpm-monorepo)
