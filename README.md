@@ -58,8 +58,10 @@ pnpm sample-app dev
 
 ##### 브랜치 네이밍 컨벤션
 
-- 신규 기능을 개발하는 브랜치는 `[프로젝트 명]/[prefix]` 형식으로 작성합니다.
-  ex) `sample-app/feat`, `sample-app/fix`
+- 신규 기능을 개발하는 브랜치 중 이슈 번호가 존재하는 경우, `[프로젝트 명]/issue[이슈 번호]` 형식으로 작성합니다.
+  ex) `sample-app/isssue1234`
+- 이슈 번호가 존재하지 않는 경우,`[프로젝트 명]/[커밋 타입]`
+  ex) `sample-app/feat`, `sample-app/fix` 등
 
 ### Monorepo Project 템플릿 사용하기
 

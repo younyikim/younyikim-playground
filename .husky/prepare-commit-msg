@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 커밋 메세지 파일 경로를 변수에 저장
+COMMIT_MESSAGE_FILE_PATH=$1
+
+# 현재 브랜치 이름에서 프로젝트명 추출
+# e.g branch : sample-app/feat -> branch_name : sample-app/
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+# branch_name 뒤 '/' 제거
+project_name=$(echo "$branch_name" | cut -d'/' -f1)
+
+# 커밋 타입(feat) 추출
+# 예: first_line = "feat : some thing" -> type = feat
+type=$(echo "$first_line" | cut -d' ' -f1)
+
+# 커밋 타입이 없는 경우 스크립트 종료
+if [ -z "$type" ]; then
+  echo "커밋 타입이 존재하지 않습니다.(feat, fix 등)"
+  exit 1
+fi
+
+
+# 커밋 메시지에 커밋 타입과 프로젝트명 추가
+# 예: first_line = feat : some thing -> new_first_line = feat (sample-app) : some thing
+new_first_line="$type ($project_name) : $(echo "$first_line" | cut -d' ' -f3-)"
+
+# 수정된 첫 번째 줄을 커밋 메시지 파일에 다시 씁니다.
+echo "$new_first_line" > "$COMMIT_MESSAGE_FILE_PATH"
+
+# 브랜치 이름에서 이슈 번호를 추출합니다.
+# e.g branch : sample-app/issue1234
+issue_number=$(echo "$branch_name" | sed -n 's/.*\/issue\([0-9]\{1,\}\)-.*/\1/p')
+
+# 이슈 번호가 있으면 커밋 메시지 파일의 마지막에 추가합니다.
+if [ -n "$issue_number" ]; then
+  echo "" >> "$COMMIT_MESSAGE_FILE_PATH"
+  echo "#$issue_number" >> "$COMMIT_MESSAGE_FILE_PATH"
+else
+  # 이슈 번호가 없는 경우에는 project_name만 추가합니다.
+  echo "" >> "$COMMIT_MESSAGE_FILE_PATH"
+  echo "$project_name" >> "$COMMIT_MESSAGE_FILE_PATH"
+fi
