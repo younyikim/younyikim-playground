@@ -39,7 +39,7 @@ git clone https://github.com/younyikim/younyikim-playground.git
 pnpm i
 ```
 
-### 로컬 환경에서 실행하기
+### 로컬 환경에서 실행
 
 1. 원하는 앱 실행하기
 
