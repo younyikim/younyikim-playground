@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# @younyikim/ui 라이브러리
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [shadcn/ui](https://ui.shadcn.com/) 기반 개인 컴포넌트 라이브러리입니다.
 
-Currently, two official plugins are available:
+### 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Tree-shakeable 라이브러리
+- Dark mode 지원
+- 스타일 Override 및 Custom 가능
 
-## Expanding the ESLint configuration
+### 예시
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`/example` 프로젝트를 실행해서 UI 라이브러리를 확인할 수 있습니다.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+cd examples
+pnpm install
+pnpm dev
+```
