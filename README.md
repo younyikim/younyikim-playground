@@ -16,13 +16,17 @@ younyikim-playground/
 ├── package.json
 ```
 
-### Applications
+### Applications & Packages
 
-현재 2개의 프로젝트가 있습니다.
+**프로젝트**
 
 - [All about my dog](https://github.com/younyikim/younyikim-playground/tree/main/apps/all-about-som) : 우리집 강아지 솜이를 소개하는 포트폴리오 웹 사이트입니다.
 
 - [Sample App](https://github.com/younyikim/younyikim-playground/tree/main/apps/sample-app) : Vite, React, Typescript 기반 테스트 웹 애플리케이션입니다.
+
+**패키지**
+
+- [@younyikim/ui](https://github.com/younyikim/younyikim-playground/tree/main/packages/ui) : shadcn/ui 기반 커스텀 UI 컴포넌트 라이브러리입니다.
 
 ### 설치
 
