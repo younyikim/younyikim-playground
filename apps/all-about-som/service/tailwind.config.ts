@@ -8,6 +8,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './*.html',
   ],
   prefix: '',
   theme: {
@@ -37,6 +38,7 @@ module.exports = {
         blue: '#0059F5',
         pink: '#F6AFC6',
         yellow: '#FFF06C',
+        black: '#1E1E1E',
       },
       fontFamily: {
         gulf: ['Gulf Display', 'sans-serif'],
