@@ -3,12 +3,12 @@ import { Outlet } from 'react-router-dom';
 
 function Root() {
   return (
-    <>
+    <div className="max-w-3xl overflow-x-hidden">
       <h1>Vite + React</h1>
       <Button className="bg-red-100">TEST</Button>
-      <h1 className="text-3xl font-bold underline bg-red-300">Hello world!</h1>
+      <div className="bg-yellow font-gulf text-4xl underline">Hello world!</div>
       <Outlet />
-    </>
+    </div>
   );
 }
 
