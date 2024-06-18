@@ -23,7 +23,7 @@ const useNavigation = (props: NavProps) => {
    * @param {string} id - 스크롤할 섹션의 ID
    */
   const handleMenuClick = (id: string) => {
-    const selectedRef = locationRef[id].current;
+    const selectedRef = locationRef[id]?.current;
 
     if (selectedRef) {
       setIsMenuOpen(false);
