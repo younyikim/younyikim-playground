@@ -1,12 +1,15 @@
 import { ForwardedRef, forwardRef } from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
+
+// Hooks
+import useAbout from './hooks/useAbout';
+import useIntersectionObserver from '@hooks/useIntersectionObserver';
 
 // Utils
 import { Images } from '@utils/image';
-import useAbout from '@pages/about/hooks/useAbout';
-import useIntersectionObserver from '@hooks/useIntersectionObserver';
 
 const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
-  const { intersectionCallback } = useAbout();
+  const { playerRef, intersectionCallback } = useAbout();
 
   useIntersectionObserver(intersectionCallback);
 
@@ -17,7 +20,17 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
     >
       <div className="flex w-full flex-col items-center justify-center">
         {/* 상단 콘텐츠 */}
-        <div className="observe-target flex w-full flex-col items-center justify-center py-20">
+        <div className="observe-target relative flex w-full flex-col items-center justify-center py-20">
+          <div className="lottie absolute -top-10 left-0 hidden w-[20rem]">
+            <Player
+              ref={playerRef}
+              autoplay={false}
+              loop={false}
+              keepLastFrame={true}
+              src={'/lottie/circleLottie.json'}
+              rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+            />
+          </div>
           {/* 제목 */}
           <div className="flex w-full items-start justify-start px-40">
             <span className="letter">H</span>
