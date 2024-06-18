@@ -1,10 +1,13 @@
 // Components
 import Nav from '@components/nav';
+import useLanding from '@pages/landing/hooks/useLanding';
 
 // Utils
 import { Images } from '@utils/image';
 
 const index = () => {
+  const { currentImage } = useLanding();
+
   return (
     <div className="relative flex h-screen w-full flex-col items-center">
       <Nav />
@@ -12,13 +15,13 @@ const index = () => {
         {/* 이미지 컨테이너 */}
         <div className="absolute left-1/2 top-1/2 flex h-[56vh] w-full -translate-x-1/2 -translate-y-1/2 transform items-center justify-center overflow-hidden rounded-full bg-slate-200">
           <img
-            src={Images.test}
-            alt="Star"
+            src={currentImage}
+            alt="Landing Images"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
         {/* 타이틀 텍스트 */}
-        <div className="absolute -top-10 flex w-fit flex-col items-center justify-center overflow-visible">
+        <div className="absolute -top-52 flex w-fit flex-col items-center justify-center overflow-visible">
           <p className="font-gulf text-blue whitespace-nowrap text-4xl">
             ALL ABOUT
           </p>
@@ -27,7 +30,7 @@ const index = () => {
           </p>
         </div>
         {/* 별 아이콘 */}
-        <div className="absolute -top-10 left-0">
+        <div className="absolute -top-52 left-0">
           <img src={Images.star} alt="Star" />
         </div>
         <div className="absolute -left-28 top-64 z-0">
