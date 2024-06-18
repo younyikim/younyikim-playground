@@ -37,3 +37,12 @@ html {
 body {
   font-size: 16px;
 }
+
+@layer components {
+  .menu-li {
+    @apply font-gulf text-center text-3xl;
+  }
+  .menu-li:hover {
+    @apply bg-slate-50;
+  }
+}

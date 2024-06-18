@@ -1,16 +1,19 @@
-// Components
-import Nav from '@components/nav';
+import { ForwardedRef, forwardRef } from 'react';
+
+// Hooks
 import useLanding from '@pages/landing/hooks/useLanding';
 
 // Utils
 import { Images } from '@utils/image';
 
-const index = () => {
+const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   const { currentImage } = useLanding();
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center">
-      <Nav />
+    <section
+      ref={ref}
+      className="relative flex h-screen w-full flex-col items-center"
+    >
       <div className="absolute left-1/2 top-1/2 flex h-[56vh] w-3/4 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full bg-slate-200">
         {/* 이미지 컨테이너 */}
         <div className="absolute left-1/2 top-1/2 flex h-[56vh] w-full -translate-x-1/2 -translate-y-1/2 transform items-center justify-center overflow-hidden rounded-full bg-slate-200">
@@ -54,8 +57,8 @@ const index = () => {
         <div className="bg-pink h-1/2 px-16" />
         <div className="bg-yellow h-1/2 w-full px-16" />
       </div>
-    </div>
+    </section>
   );
-};
+});
 
 export default index;

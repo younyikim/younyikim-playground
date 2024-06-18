@@ -1,5 +1,7 @@
-import { Images } from '@utils/image';
 import { useEffect, useState } from 'react';
+
+// Utils
+import { Images } from '@utils/image';
 
 const useLanding = () => {
   const [currentImage, setCurrentImage] = useState(Images.landing2);

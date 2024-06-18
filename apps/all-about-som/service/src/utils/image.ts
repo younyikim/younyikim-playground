@@ -6,8 +6,9 @@ export const Images = {
   sticker: '/ico/ic-sticker.svg',
   star: '/ico/ic-star.svg',
   starLg: '/ico/ic-star-lg.svg',
+  close: '/ico/ic-close.svg',
 
-  //   img
+  // img
   landing1: '/img/ic-landing-1.png',
   landing2: '/img/ic-landing-2.png',
 };
