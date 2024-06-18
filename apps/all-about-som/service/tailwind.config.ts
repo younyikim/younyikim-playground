@@ -97,7 +97,13 @@ module.exports = {
         '5xl': [
           `${(16 * 3) / baseFontSize}rem` /* 48px */,
           {
-            lineHeight: (16 * 1) / baseFontSize,
+            lineHeight: `${(16 * 2.5) / baseFontSize}rem` /* 40px */,
+          },
+        ],
+        '6xl': [
+          `${(16 * 4.25) / 10}rem` /* 68px */,
+          {
+            lineHeight: `${(16 * 4) / baseFontSize}rem` /* 64px */,
           },
         ],
       },

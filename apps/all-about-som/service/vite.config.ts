@@ -16,6 +16,7 @@ export default defineConfig({
       { find: '@utils', replacement: resolve(__dirname, 'src/utils') },
       { find: '@assets', replacement: resolve(__dirname, 'src/assets') },
       { find: '@apis', replacement: resolve(__dirname, 'src/apis') },
+      { find: '@hooks', replacement: resolve(__dirname, 'src/hooks') },
       { find: '@public', replacement: resolve(__dirname, 'public') },
       {
         find: '@icons',
