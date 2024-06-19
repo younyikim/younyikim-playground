@@ -44,6 +44,7 @@ module.exports = {
       fontFamily: {
         gulf: ['Gulf Display', 'sans-serif'],
         pretendard: ['Pretendard', 'sans-serif'],
+        gaegu: ['Gaegu', 'sans-serif'],
       },
       fontSize: {
         xs: [
