@@ -74,6 +74,8 @@ module.exports = {
         pink: '#F6AFC6',
         yellow: '#FFF06C',
         black: '#1E1E1E',
+        green: '#00A676',
+        coral: '#FF6F61',
       },
       fontFamily: {
         gulf: ['Gulf Display', 'sans-serif'],

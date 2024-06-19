@@ -27,7 +27,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
               autoplay={false}
               loop={false}
               keepLastFrame={true}
-              src={'/lottie/circleLottie.json'}
+              src={'/lottie/lineLottie.json'}
               rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
             />
           </div>
