@@ -17,6 +17,7 @@
       "@utils/*": ["src/utils/*"],
       "@assets/*": ["src/assets/*"],
       "@apis/*": ["src/apis/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@public/*": ["public/*"],
       "@icons/*": ["public/assets/icons/*"],
       "@images/*": ["public/assets/images/*"]

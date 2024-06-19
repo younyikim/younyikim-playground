@@ -6,6 +6,7 @@ import Landing from '@pages/landing';
 
 // Components
 import Nav from '@components/nav';
+import About from '@pages/about';
 
 function Root() {
   const locationRef = {
@@ -17,6 +18,7 @@ function Root() {
     <>
       <Nav locationRef={locationRef} />
       <Landing ref={locationRef.section1} />
+      <About ref={locationRef.section2} />
       <Outlet />
     </>
   );

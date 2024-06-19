@@ -48,7 +48,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
         </div>
       </div>
       {/* 하단 원형 아이콘 */}
-      <div className="absolute bottom-0 left-0 box-border flex w-full items-center justify-between bg-transparent px-16 pb-16">
+      <div className="dots">
         <img src={Images.circle} alt="Circle image" />
         <img src={Images.circle} alt="Circle image" />
       </div>
