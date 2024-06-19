@@ -57,7 +57,14 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
             <img src={Images.maltese} alt="Maltese Sticker" />
           </div>
         </div>
-        <div className="bg-yellow h-1/2 w-full px-16" />
+        <div className="bg-yellow h-1/2 w-full px-16">
+          {/* 타이틀 텍스트 */}
+          <div className="flex items-center justify-center pt-96">
+            <p className="font-gaegu whitespace-nowrap text-6xl text-black">
+              SOM
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

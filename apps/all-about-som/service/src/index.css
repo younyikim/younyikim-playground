@@ -61,7 +61,7 @@ body {
 
 @layer components {
   .menu-li {
-    @apply font-gulf text-center text-3xl;
+    @apply font-gaegu text-center text-3xl;
   }
   .menu-li:hover {
     @apply bg-slate-50;
