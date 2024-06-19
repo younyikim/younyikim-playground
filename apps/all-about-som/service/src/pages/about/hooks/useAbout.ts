@@ -9,7 +9,7 @@ const useAbout = () => {
       if (isIntersecting) {
         target.querySelectorAll('.letter').forEach((letter, index) => {
           setTimeout(() => {
-            letter.classList.add('reveal');
+            letter.classList.add('animate-reveal');
             letter.classList.remove('hide');
           }, index * 100); // Adjust delay between letters as needed
         });
@@ -22,7 +22,7 @@ const useAbout = () => {
         target.querySelector('.lottie')?.classList.remove('hidden');
       } else {
         target.querySelectorAll('.letter').forEach((letter) => {
-          letter.classList.remove('reveal');
+          letter.classList.remove('animate-reveal');
         });
 
         // Lottie 숨김
