@@ -70,8 +70,8 @@ body {
     @apply absolute bottom-0 left-0 box-border flex w-full items-center justify-between bg-transparent px-16 pb-16;
   }
   .letter {
-    -webkit-text-stroke: 2px theme('colors.blue'); /* 웹킷 브라우저용 text stroke */
-    text-stroke: 2px theme('colors.blue'); /* 모든 브라우저용 text stroke */
-    @apply font-gulf inline-block text-6xl text-transparent opacity-0;
+    -webkit-text-stroke: 1px theme('colors.black'); /* 웹킷 브라우저용 text stroke */
+    text-stroke: 1px theme('colors.black'); /* 모든 브라우저용 text stroke */
+    @apply font-gulf text-green inline-block text-6xl opacity-0;
   }
 }
