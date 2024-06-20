@@ -14,11 +14,6 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
       ref={ref}
       className="bg-pink relative flex h-screen w-full flex-col items-center pt-[7.8rem]"
     >
-      {/* 하단 원형 아이콘 */}
-      <div className="dots">
-        <img src={Images.circle} alt="Circle image" />
-        <img src={Images.circle} alt="Circle image" />
-      </div>
       {/* 배경 */}
       <div className="flex h-full w-full flex-col">
         <div className="bg-pink relative h-1/2 px-16">
@@ -57,12 +52,17 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
             <img src={Images.maltese} alt="Maltese Sticker" />
           </div>
         </div>
-        <div className="bg-yellow h-1/2 w-full px-16">
+        <div className="bg-yellow flex h-1/2 w-full flex-col justify-between px-16">
           {/* 타이틀 텍스트 */}
           <div className="flex items-center justify-center pt-96">
             <p className="font-gaegu whitespace-nowrap text-6xl text-black">
               SOM
             </p>
+          </div>
+          {/* 하단 원형 아이콘 */}
+          <div className="dots">
+            <img src={Images.circle} alt="Circle image" />
+            <img src={Images.circle} alt="Circle image" />
           </div>
         </div>
       </div>
