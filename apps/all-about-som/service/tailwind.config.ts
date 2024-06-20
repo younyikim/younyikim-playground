@@ -61,13 +61,24 @@ module.exports = {
             opacity: '1',
           },
         },
+        fadeUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'spin-slow': 'spin 6s linear infinite',
         heartbeat: 'heartbeat 2s infinite',
-        reveal: 'reveal 0.9s ease forwards',
+        reveal: 'reveal 0.2s ease forwards',
+        'fade-up': 'fadeUp 1s ease-out forwards',
       },
       colors: {
         blue: '#0059F5',
