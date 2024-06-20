@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 
-const useAbout = () => {
+const useTitleHook = () => {
   const playerRef = useRef<Player>(null);
 
   const intersectionCallback = useCallback(
@@ -10,7 +10,6 @@ const useAbout = () => {
         target.querySelectorAll('.letter').forEach((letter, index) => {
           setTimeout(() => {
             letter.classList.add('animate-reveal');
-            letter.classList.remove('hide');
           }, index * 100); // Adjust delay between letters as needed
         });
 
@@ -39,4 +38,4 @@ const useAbout = () => {
   return { intersectionCallback, playerRef };
 };
 
-export default useAbout;
+export default useTitleHook;
