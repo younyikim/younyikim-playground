@@ -10,6 +10,7 @@ export const Images = {
   close: '/ico/ic-close.svg',
   maltese: '/ico/ic-maltese.svg',
   flower: '/ico/ic-flower.svg',
+  flowerWhite: '/ico/ic-flower-white.svg',
 
   // img
   landing1: '/img/ic-landing-1.png',

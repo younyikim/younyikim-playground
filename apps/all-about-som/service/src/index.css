@@ -67,11 +67,16 @@ body {
     @apply bg-slate-50;
   }
   .dots {
-    @apply  box-border flex w-full items-center justify-between bg-transparent px-16 pb-16;
+    @apply box-border flex w-full items-center justify-between bg-transparent px-16 pb-16;
   }
   .letter {
     -webkit-text-stroke: 1px theme('colors.black'); /* 웹킷 브라우저용 text stroke */
     text-stroke: 1px theme('colors.black'); /* 모든 브라우저용 text stroke */
     @apply font-gulf text-green inline-block text-6xl opacity-0;
+  }
+  .detail-title {
+    -webkit-text-stroke: 1px theme('colors.white'); /* 웹킷 브라우저용 text stroke */
+    text-stroke: 1px theme('colors.white'); /* 모든 브라우저용 text stroke */
+    @apply font-gulf h-[5.8rem] align-middle text-6xl leading-[1.1] tracking-wider text-transparent;
   }
 }

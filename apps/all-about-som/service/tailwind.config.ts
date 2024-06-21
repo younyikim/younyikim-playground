@@ -71,6 +71,10 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        textScroll: {
+          from: { transform: 'translateX(0%)' },
+          to: { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -79,6 +83,7 @@ module.exports = {
         heartbeat: 'heartbeat 2s infinite',
         reveal: 'reveal 0.2s ease forwards',
         'fade-up': 'fadeUp 1s ease-out forwards',
+        'text-scroll': 'textScroll 15s linear infinite',
       },
       colors: {
         blue: '#0059F5',
