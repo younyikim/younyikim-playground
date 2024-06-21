@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 
-const useAbout = () => {
+const useTitleHook = () => {
   const playerRef = useRef<Player>(null);
 
   const intersectionCallback = useCallback(
@@ -9,8 +9,7 @@ const useAbout = () => {
       if (isIntersecting) {
         target.querySelectorAll('.letter').forEach((letter, index) => {
           setTimeout(() => {
-            letter.classList.add('reveal');
-            letter.classList.remove('hide');
+            letter.classList.add('animate-reveal');
           }, index * 100); // Adjust delay between letters as needed
         });
 
@@ -22,7 +21,7 @@ const useAbout = () => {
         target.querySelector('.lottie')?.classList.remove('hidden');
       } else {
         target.querySelectorAll('.letter').forEach((letter) => {
-          letter.classList.remove('reveal');
+          letter.classList.remove('animate-reveal');
         });
 
         // Lottie 숨김
@@ -39,4 +38,4 @@ const useAbout = () => {
   return { intersectionCallback, playerRef };
 };
 
-export default useAbout;
+export default useTitleHook;

@@ -15,7 +15,7 @@ const index = (props: NavProps) => {
 
   return (
     <nav
-      className={`absolute bottom-auto top-0 z-50 flex h-full w-full cursor-pointer flex-col items-center justify-between`}
+      className={`absolute bottom-auto top-0 z-50 flex h-full w-full cursor-pointer flex-col items-center justify-between md:max-w-[36rem]`}
     >
       <div className="flex h-fit w-full items-center justify-between p-16">
         <div>

@@ -8,11 +8,15 @@ import { useEffect } from 'react';
 
 type IntersectionCallback = (target: Element, isIntersecting?: boolean) => void;
 
-const useIntersectionObserver = (callback: IntersectionCallback) => {
+const useIntersectionObserver = (
+  callback: IntersectionCallback,
+  targetClassName?: string,
+  threshold = 0.1,
+) => {
   useEffect(() => {
     // Intersection Observer가 관찰할 타겟 엘리먼트의 클래스 이름
-    const targetClassName = 'observe-target';
-    const targets = document.getElementsByClassName(targetClassName);
+    const target = targetClassName ?? 'observe-target';
+    const targets = document.getElementsByClassName(target);
 
     if (targets.length > 0) {
       const observer = new IntersectionObserver(
@@ -22,8 +26,8 @@ const useIntersectionObserver = (callback: IntersectionCallback) => {
             callback(entry.target, entry.isIntersecting);
           });
         },
-        // 타겟 요소가 90% 이상 보이면 콜백 실행
-        { threshold: 0.9 },
+        // 타겟 요소가 10% 이상 보이면 콜백 실행
+        { threshold },
       );
 
       Array.from(targets).forEach((target) => {

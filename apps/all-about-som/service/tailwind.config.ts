@@ -29,17 +29,70 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        reveal: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        heartbeat: {
+          '0%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
+          '25%': {
+            transform: 'scale(1.1)',
+            opacity: '1',
+          },
+          '50%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
+          '75%': {
+            transform: 'scale(1.1)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
+        },
+        fadeUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        textScroll: {
+          from: { transform: 'translateX(0%)' },
+          to: { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'spin-slow': 'spin 6s linear infinite',
+        heartbeat: 'heartbeat 2s infinite',
+        reveal: 'reveal 0.2s ease forwards',
+        'fade-up': 'fadeUp 1s ease-out forwards',
+        'text-scroll': 'textScroll 15s linear infinite',
       },
       colors: {
         blue: '#0059F5',
         pink: '#F6AFC6',
         yellow: '#FFF06C',
         black: '#1E1E1E',
+        green: '#00A676',
+        coral: '#FF6F61',
+        purple: '#7B68EE',
       },
       fontFamily: {
         gulf: ['Gulf Display', 'sans-serif'],
@@ -101,11 +154,12 @@ module.exports = {
           },
         ],
         '6xl': [
-          `${(16 * 4.25) / 10}rem` /* 68px */,
+          `${(16 * 3.625) / baseFontSize}rem` /* 58px */,
           {
             lineHeight: `${(16 * 4) / baseFontSize}rem` /* 64px */,
           },
         ],
+        '7xl': [`${(16 * 4.25) / baseFontSize}rem` /* 68px */],
       },
       spacing: {
         px: '1px',
@@ -146,5 +200,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar-hide')],
 };
