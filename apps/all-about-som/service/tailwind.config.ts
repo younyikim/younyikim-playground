@@ -160,12 +160,7 @@ module.exports = {
             lineHeight: `${(16 * 4) / baseFontSize}rem` /* 64px */,
           },
         ],
-        '7xl': [
-          `${(16 * 4.25) / baseFontSize}rem` /* 68px */,
-          {
-            lineHeight: `${(16 * 4) / baseFontSize}rem` /* 64px */,
-          },
-        ],
+        '7xl': [`${(16 * 4.25) / baseFontSize}rem` /* 68px */],
       },
       spacing: {
         px: '1px',
