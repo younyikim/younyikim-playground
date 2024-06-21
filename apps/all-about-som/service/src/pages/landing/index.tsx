@@ -19,10 +19,10 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
         <div className="bg-pink relative h-1/2 px-16">
           {/* 타이틀 텍스트 */}
           <div className="absolute left-1/2 top-1/2 flex w-fit -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center overflow-visible">
-            <p className="font-gaegu whitespace-nowrap text-6xl text-black">
+            <p className="font-gulf whitespace-nowrap text-6xl text-white">
               ALL ABOUT
             </p>
-            <p className="font-gaegu whitespace-nowrap text-6xl text-black">
+            <p className="font-gulf whitespace-nowrap text-6xl text-white">
               MY DOG
             </p>
           </div>
@@ -55,7 +55,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
         <div className="bg-yellow flex h-1/2 w-full flex-col justify-between px-16">
           {/* 타이틀 텍스트 */}
           <div className="flex items-center justify-center pt-96">
-            <p className="font-gaegu whitespace-nowrap text-6xl text-black">
+            <p className="font-gulf whitespace-nowrap text-6xl text-white">
               SOM
             </p>
           </div>

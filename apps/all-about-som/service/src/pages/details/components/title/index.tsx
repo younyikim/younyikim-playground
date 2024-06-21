@@ -3,7 +3,7 @@ import { Images } from '@utils/image';
 
 const index = () => {
   return (
-    <div className="flex w-full items-center justify-around gap-6 overflow-hidden py-20">
+    <div className="flex w-full items-center justify-around gap-6 overflow-hidden py-40">
       <div className="animate-text-scroll flex flex-shrink-0 items-center justify-around gap-6">
         <div className="flex w-fit flex-shrink-0 items-center justify-center gap-6">
           <p className="detail-title">DETAILS</p>
