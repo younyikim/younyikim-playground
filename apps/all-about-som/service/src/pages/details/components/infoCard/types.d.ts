@@ -3,6 +3,7 @@ export interface InfoCardProps {
   handleSelected: (index: number) => void;
   cardIndex: number;
   className?: string;
+  isUseToggle?: boolean;
   faceContent: ReactNode;
   backContent: ReactNode;
 }

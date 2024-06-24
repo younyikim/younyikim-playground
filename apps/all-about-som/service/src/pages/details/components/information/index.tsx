@@ -4,6 +4,7 @@ import useInformation from '@pages/details/components/information/hooks/useInfor
 // Hooks
 import InfoCard from '@pages/details/components/infoCard';
 import { Images } from '@utils/image';
+import { calculateDaysSince } from '@utils/date';
 
 const index = () => {
   const { selected, handleSelected } = useInformation();
@@ -42,16 +43,28 @@ const index = () => {
           selected={selected}
           handleSelected={handleSelected}
           cardIndex={2}
-          className="bg-purple"
+          isUseToggle
+          className={`${selected === 2 ? 'bg-white' : 'bg-purple'}`}
           faceContent={
-            <p className="font-gulf text-center text-6xl tracking-wide text-white">
-              f2
-            </p>
+            <div className="flex h-full flex-col items-center justify-center">
+              <p className="font-gulf text-7xl tracking-wide text-white">D+</p>
+              <p className="font-gulf text-center text-7xl tracking-wide text-white">
+                {calculateDaysSince()}
+              </p>
+            </div>
           }
           backContent={
-            <p className="font-gulf text-center text-6xl tracking-wide text-white">
-              f2-back
-            </p>
+            <div className="flex h-full flex-col items-center justify-center gap-16">
+              <p className="font-gulf text-purple text-center text-4xl tracking-wide">
+                2022
+              </p>
+              <p className="font-gulf text-purple text-center text-7xl leading-none tracking-wide">
+                MAY
+              </p>
+              <p className="font-gulf text-purple text-center text-7xl leading-none tracking-wide">
+                02
+              </p>
+            </div>
           }
         />
       </div>

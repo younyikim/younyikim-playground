@@ -5,6 +5,7 @@ const index = (props: InfoCardProps) => {
     selected,
     cardIndex,
     className,
+    isUseToggle = false,
     handleSelected,
     faceContent,
     backContent,
@@ -13,9 +14,13 @@ const index = (props: InfoCardProps) => {
   return (
     <div
       className={`box-border flex flex-1 cursor-pointer items-center justify-center border border-black ${className}`}
-      onClick={() =>
-        selected === cardIndex ? handleSelected(-1) : handleSelected(cardIndex)
-      }
+      onClick={() => {
+        if (!isUseToggle) {
+          selected === cardIndex
+            ? handleSelected(-1)
+            : handleSelected(cardIndex);
+        }
+      }}
     >
       <div
         className={`${selected === cardIndex ? 'hidden' : 'visible'} h-full w-full`}
