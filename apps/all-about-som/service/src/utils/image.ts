@@ -11,6 +11,7 @@ export const Images = {
   maltese: '/ico/ic-maltese.svg',
   flower: '/ico/ic-flower.svg',
   flowerWhite: '/ico/ic-flower-white.svg',
+  spark: '/ico/ic-spark.svg',
 
   // img
   landing1: '/img/ic-landing-1.png',
