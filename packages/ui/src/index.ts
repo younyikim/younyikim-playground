@@ -1,3 +1,5 @@
+import './index.css';
+
 export { Button, buttonVariants, type ButtonProps } from '@components/button';
 export {
   Alert,
