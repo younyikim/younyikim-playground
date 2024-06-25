@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import dts from 'vite-plugin-dts';
-import { peerDependencies, dependencies } from './package.json';
+import { dependencies } from './package.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,10 +27,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // dependencies와 peerDependenciess는 빌드에 포함시키지 않음
-      external: [
-        ...Object.keys(peerDependencies),
-        ...Object.keys(dependencies),
-      ],
+      external: [...Object.keys(dependencies)],
       output: {
         // tree-shakeable 옵션
         preserveModules: true,
