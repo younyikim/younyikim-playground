@@ -1,3 +1,5 @@
+// eslint-disable-next-line prettier/prettier
+import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 import { Button } from '@components/button';
@@ -7,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@components/dropdown-menu';
-import { useTheme } from '@/components/theme-provider';
+import { useTheme } from '@components/theme-provider';
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
