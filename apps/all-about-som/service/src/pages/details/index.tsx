@@ -3,6 +3,7 @@ import { ForwardedRef, forwardRef } from 'react';
 // Components
 import Title from '@pages/details/components/title';
 import Information from '@pages/details/components/information';
+import Friends from '@pages/details/components/friends';
 
 const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   return (
@@ -13,6 +14,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
       <div className="flex h-screen w-full flex-col">
         <Title />
         <Information />
+        <Friends />
       </div>
     </section>
   );
