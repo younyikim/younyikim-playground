@@ -4,5 +4,5 @@ export interface InfoCardProps {
   cardIndex: number;
   className?: string;
   faceContent: ReactNode;
-  backContent: ReactNode;
+  backContent?: ReactNode;
 }

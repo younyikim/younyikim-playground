@@ -16,6 +16,7 @@ export const Images = {
   flower: '/ico/ic-flower.svg',
   flowerWhite: '/ico/ic-flower-white.svg',
   spark: '/ico/ic-spark.svg',
+  dial: '/ico/ic-dial.svg',
 
   // img
   landing1: '/img/ic-landing-1.png',

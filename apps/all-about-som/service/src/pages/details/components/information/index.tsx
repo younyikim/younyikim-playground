@@ -117,14 +117,23 @@ const index = () => {
           cardIndex={4}
           className="bg-pink"
           faceContent={
-            <p className="font-gulf text-center text-6xl tracking-wide text-white">
-              f4
-            </p>
-          }
-          backContent={
-            <p className="font-gulf text-center text-6xl tracking-wide text-white">
-              f4-back
-            </p>
+            <div className="box-border flex h-full flex-col items-center justify-between overflow-hidden py-20">
+              <p
+                className={`font-gulf text-center text-5xl tracking-wide text-white ${selected === 4 ? 'opacity-50' : 'opacity'}`}
+              >
+                BOY
+              </p>
+              <div
+                className={`transform ${selected === 4 ? 'origin-center rotate-90' : 'origin-center -rotate-12'} transition-transform duration-500 ease-in-out`}
+              >
+                <img src={Images.dial} alt="Dial image" />
+              </div>
+              <p
+                className={`font-gulf text-center text-5xl tracking-wide text-white ${selected === 4 ? 'opacity' : 'opacity'}`}
+              >
+                2.5KG
+              </p>
+            </div>
           }
         />
       </div>

@@ -5,7 +5,6 @@ const index = (props: InfoCardProps) => {
     selected,
     cardIndex,
     className,
-
     handleSelected,
     faceContent,
     backContent,
@@ -18,16 +17,22 @@ const index = (props: InfoCardProps) => {
         selected === cardIndex ? handleSelected(-1) : handleSelected(cardIndex);
       }}
     >
-      <div
-        className={`${selected === cardIndex ? 'hidden' : 'visible'} h-full w-full`}
-      >
-        {faceContent}
-      </div>
-      <div
-        className={`${selected === cardIndex ? 'visible' : 'hidden'} h-full w-full`}
-      >
-        {backContent}
-      </div>
+      {faceContent && backContent ? (
+        <>
+          <div
+            className={`${selected === cardIndex ? 'hidden' : 'visible'} h-full w-full`}
+          >
+            {faceContent}
+          </div>
+          <div
+            className={`${selected === cardIndex ? 'visible' : 'hidden'} h-full w-full`}
+          >
+            {backContent}
+          </div>
+        </>
+      ) : (
+        <div className="h-full w-full">{faceContent}</div>
+      )}
     </div>
   );
 };
