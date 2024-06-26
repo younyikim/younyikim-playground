@@ -75,6 +75,26 @@ module.exports = {
           from: { transform: 'translateX(0%)' },
           to: { transform: 'translateX(-100%)' },
         },
+        slideInFromLeft: {
+          '0%': {
+            transform: 'translateX(-100%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+          },
+        },
+        slideInFromRight: {
+          '0%': {
+            transform: 'translateX(100%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -84,6 +104,8 @@ module.exports = {
         reveal: 'reveal 0.2s ease forwards',
         'fade-up': 'fadeUp 1s ease-out forwards',
         'text-scroll': 'textScroll 15s linear infinite',
+        'slide-in-left': 'slideInFromLeft 0.2s ease-out forwards',
+        'slide-in-right': 'slideInFromRight 0.2s ease-out forwards',
       },
       colors: {
         blue: '#0059F5',
