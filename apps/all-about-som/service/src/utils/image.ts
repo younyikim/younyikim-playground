@@ -21,4 +21,10 @@ export const Images = {
   // img
   landing1: '/img/ic-landing-1.png',
   landing2: '/img/ic-landing-2.png',
+  bori: '/img/ic-dog-bori.svg',
+  jjeko: '/img/ic-dog-jjeko.svg',
+  latte: '/img/ic-dog-latte.svg',
+  tori: '/img/ic-dog-tori.svg',
+  ttung: '/img/ic-dog-ttung.svg',
+  zio: '/img/ic-dog-zio.svg',
 };
