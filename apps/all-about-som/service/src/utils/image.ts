@@ -7,6 +7,8 @@ export const Images = {
   star: '/ico/ic-star.svg',
   starLg: '/ico/ic-star-lg.svg',
   starGreen: '/ico/ic-star-green.svg',
+  starSquare: '/ico/ic-star-square.svg',
+  starSquarePurple: '/ico/ic-star-square-purple.svg',
   close: '/ico/ic-close.svg',
   maltese: '/ico/ic-maltese.svg',
   flower: '/ico/ic-flower.svg',

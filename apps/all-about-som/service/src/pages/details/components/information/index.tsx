@@ -1,8 +1,9 @@
 // Component
 import useInformation from '@pages/details/components/information/hooks/useInformation';
-
-// Hooks
 import InfoCard from '@pages/details/components/infoCard';
+import InfoCardSwitch from '@pages/details/components/infoCardSwitch';
+
+// Utils
 import { Images } from '@utils/image';
 import { calculateDaysSince } from '@utils/date';
 
@@ -39,22 +40,29 @@ const index = () => {
             </div>
           }
         />
-        <InfoCard
+        <InfoCardSwitch
           selected={selected}
           handleSelected={handleSelected}
           cardIndex={2}
-          isUseToggle
-          className={`${selected === 2 ? 'bg-white' : 'bg-purple'}`}
+          cardClassName={`${selected === 2 ? 'bg-white' : 'bg-purple'}`}
+          switchClassName={
+            'data-[state=checked]:bg-purple data-[state=unchecked]:bg-white'
+          }
+          thumbClassName={
+            'data-[state=checked]:bg-white data-[state=unchecked]:bg-purple'
+          }
+          checkedIcon={Images.starSquare}
+          uncheckedIcon={Images.starSquarePurple}
           faceContent={
-            <div className="flex h-full flex-col items-center justify-center">
-              <p className="font-gulf text-7xl tracking-wide text-white">D+</p>
+            <div className="flex h-3/4 flex-col items-center justify-end gap-16">
+              <p className="font-gulf text-6xl tracking-wide text-white">D+</p>
               <p className="font-gulf text-center text-7xl tracking-wide text-white">
                 {calculateDaysSince()}
               </p>
             </div>
           }
           backContent={
-            <div className="flex h-full flex-col items-center justify-center gap-16">
+            <div className="flex h-3/4 flex-col items-center justify-end">
               <p className="font-gulf text-purple text-center text-4xl tracking-wide">
                 2022
               </p>
