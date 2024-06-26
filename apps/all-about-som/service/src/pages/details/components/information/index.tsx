@@ -76,21 +76,39 @@ const index = () => {
           }
         />
       </div>
-      <div className="flex flex-1">
-        <InfoCard
+      <div className="box-border flex flex-1">
+        <InfoCardSwitch
           selected={selected}
           handleSelected={handleSelected}
           cardIndex={3}
-          className="bg-coral"
+          cardClassName={`${selected === 3 ? 'bg-white' : 'bg-coral'}`}
+          switchClassName={
+            'data-[state=checked]:bg-coral data-[state=unchecked]:bg-white'
+          }
+          thumbClassName={
+            'data-[state=checked]:bg-white data-[state=unchecked]:bg-coral'
+          }
+          checkedIcon={Images.starSquare}
+          uncheckedIcon={Images.starSquareCoral}
           faceContent={
-            <p className="font-gulf text-center text-6xl tracking-wide text-white">
-              f3
-            </p>
+            <div className="relative box-border flex h-3/4 flex-col items-center justify-center">
+              <div className="absolute z-0">
+                <img src={Images.starAlert} alt="Alert Star" />
+              </div>
+              <p className="font-gulf z-10 text-center text-5xl tracking-wide text-white">
+                ALERT
+              </p>
+            </div>
           }
           backContent={
-            <p className="font-gulf text-center text-6xl tracking-wide text-white">
-              f3-back
-            </p>
+            <div className="box-border flex h-3/4 w-full flex-col items-center justify-center overflow-hidden px-8">
+              <p className="font-gulf text-coral z-10 text-center text-4xl">
+                CHICKEN
+              </p>
+              <p className="font-gulf text-coral z-10 text-center text-4xl">
+                ALLERGY
+              </p>
+            </div>
           }
         />
         <InfoCard

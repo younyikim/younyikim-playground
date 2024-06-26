@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface InfoCardSwitchProps {
   selected: number;
   handleSelected: (index: number) => void;

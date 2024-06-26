@@ -9,6 +9,8 @@ export const Images = {
   starGreen: '/ico/ic-star-green.svg',
   starSquare: '/ico/ic-star-square.svg',
   starSquarePurple: '/ico/ic-star-square-purple.svg',
+  starSquareCoral: '/ico/ic-star-square-coral.svg',
+  starAlert: '/ico/ic-star-alert.svg',
   close: '/ico/ic-close.svg',
   maltese: '/ico/ic-maltese.svg',
   flower: '/ico/ic-flower.svg',
