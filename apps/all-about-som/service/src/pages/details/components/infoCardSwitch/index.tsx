@@ -29,6 +29,10 @@ const index = (props: InfoCardSwitchProps) => {
           }
           timeout={{ enter: 500, exit: 0 }}
           classNames={
+            /*
+                Switch가 On이 되는 경우, 왼쪽 -> 오른쪽으로 Slide in
+                Switch가 Off가 되는 경우, 오른쪽 -> 왼쪽으로 Slide out
+            */
             selected === cardIndex
               ? {
                   enter: 'opacity-0',
