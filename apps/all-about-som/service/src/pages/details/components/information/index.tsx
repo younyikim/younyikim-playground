@@ -129,7 +129,7 @@ const index = () => {
                 <img src={Images.dial} alt="Dial image" />
               </div>
               <p
-                className={`font-gulf text-center text-5xl tracking-wide text-white ${selected === 4 ? 'opacity' : 'opacity'}`}
+                className={`font-gulf text-center text-5xl tracking-wide text-white ${selected === 4 ? 'opacity' : 'opacity-50'}`}
               >
                 2.5KG
               </p>
