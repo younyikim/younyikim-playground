@@ -22,10 +22,11 @@ const ImageCarousel = (props: ImageCarouselProps) => {
     imageContainerClassName = '',
     width = '100%',
     height = 'auto',
+    ...rest
   } = props;
 
   return (
-    <Carousel className={`w-full max-w-sm ${carouselClassName}`} {...props}>
+    <Carousel className={`w-full max-w-sm ${carouselClassName}`} {...rest}>
       <CarouselContent className={`-ml-1 ${contentClassName}`}>
         {images.map((image, index) => (
           <CarouselItem
