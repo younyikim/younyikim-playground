@@ -14,8 +14,8 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
       <div className="flex h-screen w-full flex-col">
         <Title />
         <Information />
-        <Friends />
       </div>
+      <Friends />
     </section>
   );
 });
