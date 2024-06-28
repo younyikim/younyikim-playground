@@ -56,7 +56,15 @@ const index = (props: InfoCardSwitchProps) => {
                 }
           }
         >
-          {selected === cardIndex ? backContent : faceContent}
+          {selected === cardIndex ? (
+            <div ref={nodeRef} className="flex h-3/4 flex-col">
+              {backContent}
+            </div>
+          ) : (
+            <div ref={nodeRef} className="flex h-3/4 flex-col">
+              {faceContent}
+            </div>
+          )}
         </CSSTransition>
       </SwitchTransition>
 

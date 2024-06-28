@@ -54,7 +54,7 @@ const index = () => {
           checkedIcon={Images.starSquare}
           uncheckedIcon={Images.starSquarePurple}
           faceContent={
-            <div className="flex h-3/4 flex-col items-center justify-end gap-16">
+            <div className="flex h-full flex-col items-center justify-end gap-16">
               <p className="font-gulf text-6xl tracking-wide text-white">D+</p>
               <p className="font-gulf text-center text-7xl tracking-wide text-white">
                 {calculateDaysSince()}
@@ -62,7 +62,7 @@ const index = () => {
             </div>
           }
           backContent={
-            <div className="flex h-3/4 flex-col items-center justify-end">
+            <div className="flex h-full flex-col items-center justify-end">
               <p className="font-gulf text-purple text-center text-4xl tracking-wide">
                 2022
               </p>
@@ -91,7 +91,7 @@ const index = () => {
           checkedIcon={Images.starSquare}
           uncheckedIcon={Images.starSquareCoral}
           faceContent={
-            <div className="relative box-border flex h-3/4 flex-col items-center justify-center">
+            <div className="relative box-border flex h-full flex-col items-center justify-center">
               <div className="absolute z-0">
                 <img src={Images.starAlert} alt="Alert Star" />
               </div>
@@ -101,7 +101,7 @@ const index = () => {
             </div>
           }
           backContent={
-            <div className="box-border flex h-3/4 w-full flex-col items-center justify-center overflow-hidden px-8">
+            <div className="box-border flex h-full w-full flex-col items-center justify-center overflow-hidden px-8">
               <p className="font-gulf text-coral z-10 text-center text-4xl">
                 CHICKEN
               </p>
