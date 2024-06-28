@@ -15,7 +15,7 @@
     "build": "tsc && vite build && npm run build:styles",
     "build:styles": "postcss ./src/index.css -o ./dist/style.css",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "components": "npx shadcn-ui@latest add -p src/components",
+    "components": "npx shadcn-ui@latest add -p src/components/ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -26,6 +26,7 @@
     "@radix-ui/react-switch": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.1.5",
     "init": "^0.1.2",
     "lucide-react": "^0.394.0",
     "react": "^18.2.0",
