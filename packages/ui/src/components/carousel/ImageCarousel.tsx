@@ -1,29 +1,57 @@
 import * as React from 'react';
 
 // Components
-import { Card, CardContent } from '@components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
 } from '@components/ui/carousel';
 
-const ImageCarousel = () => {
+// Typings
+import { ImageCarouselProps } from '@components/carousel/typings';
+
+const ImageCarousel = (props: ImageCarouselProps) => {
+  const {
+    images,
+    showArrows = false,
+    carouselStyle = '',
+    contentStyle = '',
+    itemStyle = '',
+    imageContainerStyle = '',
+    width = '100%',
+    height = 'auto',
+  } = props;
+
   return (
-    <Carousel className="w-full max-w-sm">
-      <CarouselContent className="-ml-1">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-2xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
+    <Carousel className={`w-full max-w-sm ${carouselStyle}`} {...props}>
+      <CarouselContent className={`-ml-1 ${contentStyle}`}>
+        {images.map((image, index) => (
+          <CarouselItem
+            key={index}
+            className={`pl-1 md:basis-1/2 lg:basis-1/3 ${itemStyle}`}
+          >
+            <div
+              className={`overflow-hidden rounded-3xl border border-white ${imageContainerStyle}`}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="object-cover"
+                width={width}
+                height={height}
+              />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
+      {showArrows && (
+        <>
+          <CarouselPrevious />
+          <CarouselNext />
+        </>
+      )}
     </Carousel>
   );
 };
