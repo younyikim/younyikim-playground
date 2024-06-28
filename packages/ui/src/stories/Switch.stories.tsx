@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 // Component
-import { Switch } from '@/components/switch';
-import { Label } from '@components/label';
+import { Switch } from '@components/ui/switch';
+import { Label } from '@components/ui/label';
 
 // Alert 컴포넌트의 Prop 타입 정의
 interface SwitchProps {

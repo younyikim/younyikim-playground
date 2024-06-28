@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 // Component
-import { Alert, AlertTitle, AlertDescription } from '@/components/alert';
+import { Alert, AlertTitle, AlertDescription } from '@components/ui/alert';
 
 // Alert 컴포넌트의 Prop 타입 정의
 interface AlertProps {
