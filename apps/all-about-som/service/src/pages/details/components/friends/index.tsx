@@ -2,7 +2,7 @@ import { Images } from '@utils/image';
 
 const index = () => {
   return (
-    <div className="box-border flex w-full flex-col bg-black py-16">
+    <div className="box-border flex w-full flex-col bg-black pt-16">
       <h3 className="font-gulf pl-16 text-4xl text-white">FRIENDS</h3>
 
       <div className="box-border flex flex-1 pt-10">
