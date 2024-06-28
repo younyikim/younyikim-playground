@@ -10,35 +10,28 @@ type IntersectionCallback = (target: Element, isIntersecting?: boolean) => void;
 
 const useIntersectionObserver = (
   callback: IntersectionCallback,
-  targetClassName?: string,
+  selector: string,
   threshold = 0.1,
 ) => {
   useEffect(() => {
-    // Intersection Observer가 관찰할 타겟 엘리먼트의 클래스 이름
-    const target = targetClassName ?? 'observe-target';
-    const targets = document.getElementsByClassName(target);
+    const elements = document.getElementsByClassName(selector);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // 관찰되는 모든 타켓 요소에 대해 콜백 함수 실행
+        entries.forEach((entry) => {
+          callback(entry.target, entry.isIntersecting);
+        });
+      },
+      // 타겟 요소가 threshold 이상 보이면 콜백 실행 (threshold : 0.1 -> 10% 이상 보일 때)
+      { threshold },
+    );
 
-    if (targets.length > 0) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          // 관찰되는 모든 타켓 요소에 대해 콜백 함수 실행
-          entries.forEach((entry) => {
-            callback(entry.target, entry.isIntersecting);
-          });
-        },
-        // 타겟 요소가 10% 이상 보이면 콜백 실행
-        { threshold },
-      );
+    Array.from(elements).forEach((element) => observer.observe(element));
 
-      Array.from(targets).forEach((target) => {
-        observer.observe(target);
-      });
-
-      return () => {
-        observer.disconnect();
-      };
-    }
-  }, [callback]);
+    return () => {
+      Array.from(elements).forEach((element) => observer.unobserve(element));
+    };
+  }, [selector, callback]);
 };
 
 export default useIntersectionObserver;

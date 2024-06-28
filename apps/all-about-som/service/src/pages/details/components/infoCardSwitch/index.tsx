@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Switch } from '@younyikim/ui';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
@@ -18,6 +19,8 @@ const index = (props: InfoCardSwitchProps) => {
     uncheckedIcon = '',
   } = props;
 
+  const nodeRef = useRef(null);
+
   return (
     <div
       className={`box-border flex flex-1 cursor-pointer items-center justify-center border border-black ${cardClassName} relative flex-col overflow-hidden`}
@@ -27,6 +30,7 @@ const index = (props: InfoCardSwitchProps) => {
           key={
             selected === cardIndex ? `back-${cardIndex}` : `face-${cardIndex}`
           }
+          nodeRef={nodeRef}
           timeout={{ enter: 500, exit: 0 }}
           classNames={
             /*
@@ -52,7 +56,15 @@ const index = (props: InfoCardSwitchProps) => {
                 }
           }
         >
-          {selected === cardIndex ? backContent : faceContent}
+          {selected === cardIndex ? (
+            <div ref={nodeRef} className="flex h-3/4 flex-col">
+              {backContent}
+            </div>
+          ) : (
+            <div ref={nodeRef} className="flex h-3/4 flex-col">
+              {faceContent}
+            </div>
+          )}
         </CSSTransition>
       </SwitchTransition>
 

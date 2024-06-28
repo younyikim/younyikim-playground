@@ -7,12 +7,12 @@ import useIntersectionObserver from '@hooks/useIntersectionObserver';
 const index = () => {
   const { playerRef, intersectionCallback } = useTitleHook();
 
-  useIntersectionObserver(intersectionCallback);
+  useIntersectionObserver(intersectionCallback, 'observe-title');
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
       {/* 상단 콘텐츠 */}
-      <div className="observe-target relative flex w-full flex-col items-center justify-center py-20">
+      <div className="observe-title relative flex w-full flex-col items-center justify-center py-20">
         {/* 제목 */}
         <div className="flex w-full items-start justify-start px-40">
           <span className="letter">A</span>
