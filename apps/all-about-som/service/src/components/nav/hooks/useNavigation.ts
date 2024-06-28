@@ -7,9 +7,8 @@ const menu = [
   { id: 'section1', name: 'HOME' },
   { id: 'section2', name: 'ABOUT' },
   { id: 'section3', name: 'DETAILS' },
-  { id: 'section4', name: 'FAVORITES' },
-  { id: 'section5', name: 'GALLERY' },
-  { id: 'section6', name: 'WHERE IS SOM?' },
+  { id: 'section4', name: 'GALLERY' },
+  { id: 'section5', name: 'WHERE IS SOM?' },
 ];
 
 const useNavigation = (props: NavProps) => {

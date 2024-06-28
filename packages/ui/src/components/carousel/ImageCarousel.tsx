@@ -1,29 +1,81 @@
-import * as React from 'react';
+import React from 'react';
+import AutoScroll from 'embla-carousel-auto-scroll';
 
 // Components
-import { Card, CardContent } from '@components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselApi,
 } from '@components/ui/carousel';
 
-const ImageCarousel = () => {
+// Typings
+import { ImageCarouselProps } from '@components/carousel/typings';
+
+const ImageCarousel = (props: ImageCarouselProps) => {
+  const {
+    images,
+    showArrows = false,
+    carouselClassName = '',
+    contentClassName = '',
+    itemClassName = '',
+    imageContainerClassName = '',
+    width = '100%',
+    height = 'auto',
+    opts = { loop: true },
+    autoScrollOptions = { playOnInit: true, speed: 1 },
+    isInfiniteLoop = true,
+    ...rest
+  } = props;
+
+  /**
+   * isInfiniteLoop 플래그에 따라 자동으로 캐러셀 자동 스크롤을 시작하거나 멈추는 함수
+   * @param {CarouselApi} api 캐러셀 컴포넌트에서 제공하는 API 객체
+   */
+  const autoPlay = (api: CarouselApi) => {
+    const autoScroll = api?.plugins()?.autoScroll;
+
+    if (!autoScroll || !isInfiniteLoop) return;
+
+    autoScroll.play;
+  };
+
   return (
-    <Carousel className="w-full max-w-sm">
-      <CarouselContent className="-ml-1">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-2xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
+    <Carousel
+      className={`w-full max-w-sm ${carouselClassName}`}
+      plugins={[AutoScroll(autoScrollOptions)]}
+      opts={opts}
+      setApi={autoPlay}
+      {...rest}
+    >
+      <CarouselContent className={`-ml-1 ${contentClassName}`}>
+        {images.map((image, index) => (
+          <CarouselItem
+            key={index}
+            className={`pl-1 md:basis-1/2 lg:basis-1/3 ${itemClassName}`}
+          >
+            <div
+              className={`overflow-hidden rounded-3xl border border-white ${imageContainerClassName}`}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="object-cover"
+                width={width}
+                height={height}
+              />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
+      {showArrows && (
+        <>
+          <CarouselPrevious />
+          <CarouselNext />
+        </>
+      )}
     </Carousel>
   );
 };
