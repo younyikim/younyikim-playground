@@ -16,24 +16,24 @@ const ImageCarousel = (props: ImageCarouselProps) => {
   const {
     images,
     showArrows = false,
-    carouselStyle = '',
-    contentStyle = '',
-    itemStyle = '',
-    imageContainerStyle = '',
+    carouselClassName = '',
+    contentClassName = '',
+    itemClassName = '',
+    imageContainerClassName = '',
     width = '100%',
     height = 'auto',
   } = props;
 
   return (
-    <Carousel className={`w-full max-w-sm ${carouselStyle}`} {...props}>
-      <CarouselContent className={`-ml-1 ${contentStyle}`}>
+    <Carousel className={`w-full max-w-sm ${carouselClassName}`} {...props}>
+      <CarouselContent className={`-ml-1 ${contentClassName}`}>
         {images.map((image, index) => (
           <CarouselItem
             key={index}
-            className={`pl-1 md:basis-1/2 lg:basis-1/3 ${itemStyle}`}
+            className={`pl-1 md:basis-1/2 lg:basis-1/3 ${itemClassName}`}
           >
             <div
-              className={`overflow-hidden rounded-3xl border border-white ${imageContainerStyle}`}
+              className={`overflow-hidden rounded-3xl border border-white ${imageContainerClassName}`}
             >
               <img
                 src={image.src}

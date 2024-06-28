@@ -6,10 +6,10 @@ export interface ImageCarouselProps {
   canScrollPrev?: boolean;
   canScrollNext?: boolean;
   orientation?: Orientation;
-  carouselStyle?: string;
-  contentStyle?: string;
-  itemStyle?: string;
-  imageContainerStyle?: string;
+  carouselClassName?: string;
+  contentClassName?: string;
+  itemClassName?: string;
+  imageContainerClassName?: string;
   width?: number;
   height?: number;
 }
