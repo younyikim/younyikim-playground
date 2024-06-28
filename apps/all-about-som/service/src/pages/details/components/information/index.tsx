@@ -11,7 +11,7 @@ const index = () => {
   const { selected, handleSelected } = useInformation();
 
   return (
-    <div className="box-border flex h-screen w-full flex-col">
+    <div className="box-border flex h-full w-full flex-col">
       <div className="box-border flex flex-1">
         <InfoCard
           selected={selected}

@@ -9,7 +9,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <section
       ref={ref}
-      className="bg-blue scrollbar-hide relative flex h-full w-full flex-col items-center"
+      className="bg-blue scrollbar-hide relative flex h-fit w-full flex-col items-center overflow-y-auto"
     >
       <div className="flex h-screen w-full flex-col">
         <Title />
