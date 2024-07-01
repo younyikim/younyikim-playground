@@ -107,6 +107,10 @@ module.exports = {
             filter: 'blur(0)',
           },
         },
+        overlaySlide: {
+          from: { transform: 'scale(1,1)' },
+          to: { transform: 'scale(0,1)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -119,6 +123,7 @@ module.exports = {
         'slide-in-left': 'slideInFromLeft 0.2s ease-out forwards',
         'slide-in-right': 'slideInFromRight 0.2s ease-out forwards',
         'scroll-in-left': 'scrollSlideInFromLeft  1s forwards',
+        'overlay-fade-in': 'overlaySlide 1s forwards',
       },
       colors: {
         blue: '#0059F5',

@@ -9,6 +9,7 @@ import Nav from '@components/nav';
 import About from '@pages/about';
 import Details from '@pages/details';
 import Gallery from '@pages/gallery';
+import Location from '@pages/status';
 
 function Root() {
   const locationRef = {
@@ -16,6 +17,7 @@ function Root() {
     section2: useRef(null),
     section3: useRef(null),
     section4: useRef(null),
+    section5: useRef(null),
   };
 
   return (
@@ -25,6 +27,7 @@ function Root() {
       <About ref={locationRef.section2} />
       <Details ref={locationRef.section3} />
       <Gallery ref={locationRef.section4} />
+      <Location ref={locationRef.section5} />
       <Outlet />
     </>
   );
