@@ -109,7 +109,9 @@ module.exports = {
         },
         overlaySlide: {
           from: { transform: 'scale(1,1)' },
-          to: { transform: 'scale(0,1)' },
+          to: {
+            transform: 'scale(0,1)',
+          },
         },
       },
       animation: {
@@ -123,7 +125,7 @@ module.exports = {
         'slide-in-left': 'slideInFromLeft 0.2s ease-out forwards',
         'slide-in-right': 'slideInFromRight 0.2s ease-out forwards',
         'scroll-in-left': 'scrollSlideInFromLeft  1s forwards',
-        'overlay-fade-in': 'overlaySlide 1s forwards',
+        'overlay-fade-in': 'overlaySlide 2s forwards',
       },
       colors: {
         blue: '#0059F5',
@@ -240,5 +242,22 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar-hide')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwind-scrollbar-hide'),
+    ({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          'animation-delay': (value) => {
+            return {
+              'animation-delay': value,
+            };
+          },
+        },
+        {
+          values: theme('transitionDelay'),
+        },
+      );
+    },
+  ],
 };
