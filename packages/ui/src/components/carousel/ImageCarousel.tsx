@@ -22,8 +22,6 @@ const ImageCarousel = (props: ImageCarouselProps) => {
     contentClassName = '',
     itemClassName = '',
     imageContainerClassName = '',
-    width = '100%',
-    height = 'auto',
     opts = { loop: true },
     autoScrollOptions = { playOnInit: true, speed: 1 },
     isInfiniteLoop = true,
@@ -57,14 +55,12 @@ const ImageCarousel = (props: ImageCarouselProps) => {
             className={`pl-1 md:basis-1/2 lg:basis-1/3 ${itemClassName}`}
           >
             <div
-              className={`overflow-hidden rounded-3xl border border-white ${imageContainerClassName}`}
+              className={`overflow-hidden rounded-3xl border border-white ${imageContainerClassName} h-[300px]`}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="object-cover"
-                width={width}
-                height={height}
+                className="h-full w-full object-cover"
               />
             </div>
           </CarouselItem>
