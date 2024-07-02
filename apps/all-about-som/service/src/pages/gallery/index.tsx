@@ -24,6 +24,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
           stopOnFocusIn: false,
           speed: 1,
         }}
+        imageContainerClassName={'h-[23rem]'}
       />
       <h3 className="font-gulf observe-gallery text-6xl text-white">GALLERY</h3>
       <ImageCarousel
@@ -35,6 +36,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
           stopOnFocusIn: false,
           speed: 1,
         }}
+        imageContainerClassName={'h-[23rem]'}
       />
     </section>
   );

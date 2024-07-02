@@ -30,4 +30,16 @@ export const Images = {
   home: '/img/ic-home.png',
   park: '/img/ic-park.png',
   walk: '/img/ic-walk.png',
+
+  // img/gallery
+  image01: '/img/gallery/img-01.png',
+  image02: '/img/gallery/img-02.png',
+  image03: '/img/gallery/img-03.png',
+  image04: '/img/gallery/img-04.png',
+  image05: '/img/gallery/img-05.png',
+  image06: '/img/gallery/img-06.png',
+  image07: '/img/gallery/img-07.png',
+  image08: '/img/gallery/img-08.png',
+  image09: '/img/gallery/img-09.png',
+  image10: '/img/gallery/img-10.png',
 };
