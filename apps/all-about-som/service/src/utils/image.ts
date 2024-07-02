@@ -27,4 +27,7 @@ export const Images = {
   tori: '/img/ic-dog-tori.svg',
   ttung: '/img/ic-dog-ttung.svg',
   zio: '/img/ic-dog-zio.svg',
+  home: '/img/ic-home.png',
+  park: '/img/ic-park.png',
+  walk: '/img/ic-walk.png',
 };

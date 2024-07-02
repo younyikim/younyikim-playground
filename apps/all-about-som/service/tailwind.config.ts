@@ -95,6 +95,24 @@ module.exports = {
             opacity: '1',
           },
         },
+        scrollSlideInFromLeft: {
+          '0%': {
+            transform: 'translateX(-100%)',
+            opacity: '0',
+            filter: 'blur(5px)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+            filter: 'blur(0)',
+          },
+        },
+        overlaySlide: {
+          from: { transform: 'scale(1,1)' },
+          to: {
+            transform: 'scale(0,1)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -106,6 +124,8 @@ module.exports = {
         'text-scroll': 'textScroll 15s linear infinite',
         'slide-in-left': 'slideInFromLeft 0.2s ease-out forwards',
         'slide-in-right': 'slideInFromRight 0.2s ease-out forwards',
+        'scroll-in-left': 'scrollSlideInFromLeft  1s forwards',
+        'overlay-fade-in': 'overlaySlide 2s forwards',
       },
       colors: {
         blue: '#0059F5',
@@ -222,5 +242,22 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar-hide')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwind-scrollbar-hide'),
+    ({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          'animation-delay': (value) => {
+            return {
+              'animation-delay': value,
+            };
+          },
+        },
+        {
+          values: theme('transitionDelay'),
+        },
+      );
+    },
+  ],
 };
