@@ -38,6 +38,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
           <div className="absolute -bottom-1/4 left-1/2 flex h-[18vh] w-3/4 -translate-x-1/2 -translate-y-1/4 transform items-center justify-center overflow-hidden rounded-3xl">
             {/* 이미지 컨테이너 */}
             <img
+              key="landing-image"
               src={currentImage}
               alt="Landing Images"
               className="absolute inset-0 h-full w-full object-cover"
