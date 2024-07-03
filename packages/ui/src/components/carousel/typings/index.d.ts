@@ -17,4 +17,5 @@ export interface ImageCarouselProps {
   opts?: CarouselOptions;
   autoScrollOptions?: AutoScrollOptionsType;
   isInfiniteLoop?: boolean;
+  loading?: 'lazy' | 'eager';
 }
