@@ -25,6 +25,7 @@ const ImageCarousel = (props: ImageCarouselProps) => {
     opts = { loop: true },
     autoScrollOptions = { playOnInit: true, speed: 1 },
     isInfiniteLoop = true,
+    loading = 'lazy',
     ...rest
   } = props;
 
@@ -59,6 +60,7 @@ const ImageCarousel = (props: ImageCarouselProps) => {
             >
               <img
                 src={image.src}
+                loading={loading}
                 alt={image.alt}
                 className="h-full w-full object-cover"
               />
