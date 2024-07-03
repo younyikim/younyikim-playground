@@ -7,21 +7,45 @@ const index = () => {
       <div className="animate-text-scroll flex flex-shrink-0 items-center justify-around gap-6">
         <div className="flex w-fit flex-shrink-0 items-center justify-center gap-6">
           <p className="detail-title">DETAILS</p>
-          <img src={Images.flowerWhite} width={40} height={40} alt="Flowers" />
+          <img
+            src={Images.flowerWhite}
+            width={40}
+            height={40}
+            alt="Flowers"
+            loading="lazy"
+          />
         </div>
         <div className="flex w-fit flex-shrink-0 items-center justify-center gap-6">
           <p className="detail-title">DETAILS</p>
-          <img src={Images.flowerWhite} width={40} height={40} alt="Flowers" />
+          <img
+            src={Images.flowerWhite}
+            width={40}
+            height={40}
+            alt="Flowers"
+            loading="lazy"
+          />
         </div>
       </div>
       <div className="animate-text-scroll flex flex-shrink-0 items-center justify-around gap-6">
         <div className="flex w-fit flex-shrink-0 items-center justify-center gap-6">
           <p className="detail-title">DETAILS</p>
-          <img src={Images.flowerWhite} width={40} height={40} alt="Flowers" />
+          <img
+            src={Images.flowerWhite}
+            width={40}
+            height={40}
+            alt="Flowers"
+            loading="lazy"
+          />
         </div>
         <div className="flex w-fit flex-shrink-0 items-center justify-center gap-6">
           <p className="detail-title">DETAILS</p>
-          <img src={Images.flowerWhite} width={40} height={40} alt="Flowers" />
+          <img
+            src={Images.flowerWhite}
+            width={40}
+            height={40}
+            alt="Flowers"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
