@@ -9,7 +9,6 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "target": "es5",
-    "outDir": "./dist"
+    "target": "es5"
   }
 }

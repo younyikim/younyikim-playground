@@ -7,6 +7,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "outDir": "dist",
 
     /* 절대 경로 설정 */
     "baseUrl": ".", // 이 경우는 tsconfig.json이 존재하는 루트 디렉토리를 기준으로 삼는다.
@@ -23,5 +24,5 @@
       "@images/*": ["public/assets/images/*"]
     }
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["./src", "vite.config.ts"]
 }
