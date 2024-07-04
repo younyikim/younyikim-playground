@@ -78,7 +78,7 @@ const index = (props: InfoCardSwitchProps) => {
           ) : (
             <Switch
               src={selected === cardIndex ? uncheckedIcon : checkedIcon}
-              checked={selected === cardIndex}
+              checked={selected === cardIndex ? true : false}
               onCheckedChange={(checked) =>
                 checked ? handleSelected(cardIndex) : handleSelected(-1)
               }
