@@ -1,5 +1,5 @@
 import { CarouselOptions } from '@components/ui/carousel';
-import { AutoScrollOptionsType } from 'embla-carousel-auto-scroll';
+import { AutoplayOptionsType } from 'embla-carousel-autoplay';
 type Orientation = 'horizontal' | 'vertical';
 
 export interface ImageCarouselProps {
@@ -15,7 +15,7 @@ export interface ImageCarouselProps {
   width?: number;
   height?: number;
   opts?: CarouselOptions;
-  autoScrollOptions?: AutoScrollOptionsType;
+  autoScrollOptions?: AutoplayOptionsType;
   isInfiniteLoop?: boolean;
   loading?: 'lazy' | 'eager';
 }
