@@ -1,7 +1,9 @@
 import { Images } from '@utils/image';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 const useGallery = () => {
+  const [isInfiniteLoop, setIsInfiniteLoop] = useState(false);
+
   const imagesTop = [
     { src: Images.image01, alt: 'Image 1' },
     { src: Images.image02, alt: 'Image 2' },
@@ -29,7 +31,27 @@ const useGallery = () => {
     [],
   );
 
-  return { imagesTop, imagesBottom, intersectionCallback };
+  /*
+   * ImageCarousel이 viewport에 들어올 때 auto scroll 시작
+   */
+  const intersectionCarouselCallback = useCallback(
+    (_: Element, isIntersecting?: boolean) => {
+      if (isIntersecting) {
+        setIsInfiniteLoop(true);
+      } else {
+        setIsInfiniteLoop(false);
+      }
+    },
+    [],
+  );
+
+  return {
+    imagesTop,
+    imagesBottom,
+    isInfiniteLoop,
+    intersectionCallback,
+    intersectionCarouselCallback,
+  };
 };
 
 export default useGallery;

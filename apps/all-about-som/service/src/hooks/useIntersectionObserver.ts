@@ -7,11 +7,12 @@ import { useEffect } from 'react';
  */
 
 type IntersectionCallback = (target: Element, isIntersecting?: boolean) => void;
+type IntersectionOptionsType = IntersectionObserverInit;
 
 const useIntersectionObserver = (
   callback: IntersectionCallback,
   selector: string,
-  threshold = 0.1,
+  options?: IntersectionOptionsType,
 ) => {
   useEffect(() => {
     const elements = document.getElementsByClassName(selector);
@@ -22,8 +23,8 @@ const useIntersectionObserver = (
           callback(entry.target, entry.isIntersecting);
         });
       },
-      // 타겟 요소가 threshold 이상 보이면 콜백 실행 (threshold : 0.1 -> 10% 이상 보일 때)
-      { threshold },
+
+      options,
     );
 
     Array.from(elements).forEach((element) => observer.observe(element));
