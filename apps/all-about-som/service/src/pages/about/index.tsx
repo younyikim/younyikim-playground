@@ -20,8 +20,20 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
 
       {/* 하단 원형 아이콘 */}
       <div className="dots">
-        <img src={Images.circle} alt="Circle image" width={46} height={46} />
-        <img src={Images.circle} alt="Circle image" width={46} height={46} />
+        <img
+          src={Images.circle}
+          alt="Circle image"
+          width={46}
+          height={46}
+          loading="lazy"
+        />
+        <img
+          src={Images.circle}
+          alt="Circle image"
+          width={46}
+          height={46}
+          loading="lazy"
+        />
       </div>
     </section>
   );

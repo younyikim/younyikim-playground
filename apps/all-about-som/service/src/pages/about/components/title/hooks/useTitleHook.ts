@@ -1,8 +1,26 @@
-import { useCallback, useRef } from 'react';
-import { Player } from '@lottiefiles/react-lottie-player';
+import { useCallback, useEffect } from 'react';
+import lottie from 'lottie-web/build/player/lottie_light';
+import lineLottie from '@public/lottie/lineLottie.json';
 
 const useTitleHook = () => {
-  const playerRef = useRef<Player>(null);
+  useEffect(() => {
+    const container = document.querySelector('#line-lottie');
+
+    if (container) {
+      const instance = lottie.loadAnimation({
+        container: container,
+        animationData: lineLottie,
+        autoplay: true,
+        loop: false,
+        renderer: 'svg',
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid meet',
+        },
+      });
+
+      return () => instance.destroy();
+    }
+  }, []);
 
   const intersectionCallback = useCallback(
     (target: Element, isIntersecting?: boolean) => {
@@ -14,9 +32,7 @@ const useTitleHook = () => {
         });
 
         // Lottie 표시 및 재생
-        if (playerRef.current) {
-          playerRef.current?.play();
-        }
+        lottie.play();
 
         target.querySelector('.lottie')?.classList.remove('hidden');
       } else {
@@ -25,9 +41,7 @@ const useTitleHook = () => {
         });
 
         // Lottie 숨김
-        if (playerRef.current) {
-          playerRef.current?.stop();
-        }
+        lottie.stop();
 
         target.querySelector('.lottie')?.classList.add('hidden');
       }
@@ -35,7 +49,7 @@ const useTitleHook = () => {
     [],
   );
 
-  return { intersectionCallback, playerRef };
+  return { intersectionCallback };
 };
 
 export default useTitleHook;

@@ -41,7 +41,7 @@ const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
               key="landing-image"
               src={currentImage}
               alt="Landing Images"
-              className="h-ful inset-0l absolute w-full object-cover"
+              className="inset absolute inset-0 h-full w-full object-cover"
               width="100%"
               height="140"
             />

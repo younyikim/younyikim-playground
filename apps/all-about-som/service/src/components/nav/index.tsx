@@ -44,7 +44,7 @@ const index = (props: NavProps) => {
         </div>
       </div>
       <div
-        className={`flex w-full flex-grow flex-col items-center justify-start p-16 transition-all ease-in-out ${isMenuOpen ? 'opacity bg-pink h-full duration-500' : 'opacity-0 duration-500'}`}
+        className={`flex w-full flex-grow flex-col items-center justify-start p-16 transition-all ease-in-out ${isMenuOpen ? 'bg-pink visible h-full duration-500' : 'hidden duration-500'}`}
       >
         <ul className="flex flex-col gap-32">
           {menu.map(({ name, id }) => (
