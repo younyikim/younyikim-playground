@@ -1,11 +1,9 @@
-import { Player } from '@lottiefiles/react-lottie-player';
-
 // Hooks
 import useTitleHook from './hooks/useTitleHook';
 import useIntersectionObserver from '@hooks/useIntersectionObserver';
 
 const index = () => {
-  const { playerRef, intersectionCallback } = useTitleHook();
+  const { intersectionCallback } = useTitleHook();
 
   useIntersectionObserver(intersectionCallback, 'observe-title');
 
@@ -28,14 +26,7 @@ const index = () => {
         </div>
         {/* Lottie */}
         <div className="lottie transfrom absolute -bottom-16 left-10 hidden w-[25rem] rotate-180">
-          <Player
-            ref={playerRef}
-            autoplay={false}
-            loop={false}
-            keepLastFrame={true}
-            src={'/lottie/lineLottie.json'}
-            rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-          />
+          <div id="line-lottie" />
         </div>
       </div>
     </div>

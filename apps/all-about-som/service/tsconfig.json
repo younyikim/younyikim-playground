@@ -5,6 +5,8 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "outDir": "dist",
@@ -24,5 +26,5 @@
       "@images/*": ["public/assets/images/*"]
     }
   },
-  "include": ["./src", "vite.config.ts"]
+  "include": ["./src", "vite.config.ts", "public/lottie/**/*.json"]
 }
