@@ -31,7 +31,14 @@ const Switch = React.forwardRef<
     >
       {src && (
         <div className="flex h-full w-full items-center justify-center">
-          <img src={src} loading={loading} alt="Switch button image" />
+          <img
+            src={src}
+            loading={loading}
+            alt="Switch button image"
+            width="100"
+            height="100"
+            className="h-auto w-full"
+          />
         </div>
       )}
     </SwitchPrimitives.Thumb>

@@ -8,7 +8,7 @@
     "format": "prettier --write .",
     "sample-app": "pnpm --filter sample-app",
     "som:service": "pnpm --filter @all-about-som/service",
-    "common": "pnpm --filter common"
+    "ui": "pnpm --filter @younyikim/ui"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

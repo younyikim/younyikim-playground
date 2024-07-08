@@ -12,8 +12,8 @@ const index = () => {
     <div className="observe-content flex w-full flex-col items-center justify-center px-20 py-16 opacity-0">
       {/* 스티커 */}
       <div className="flex w-full items-start justify-between">
-        <img src={Images.flower} alt="Flower icon" />
-        <img src={Images.starGreen} alt="Star icon" />
+        <img src={Images.flower} alt="Flower icon" width={52} height={52} />
+        <img src={Images.starGreen} alt="Star icon" width={50} height={71} />
       </div>
       {/* About 콘텐츠 */}
       <div className="justify-centerpx-16 flex w-full flex-col items-center px-20">

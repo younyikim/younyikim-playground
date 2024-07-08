@@ -19,7 +19,13 @@ const index = (props: NavProps) => {
     >
       <div className="flex h-fit w-full items-center justify-between p-16">
         <div>
-          <img src={Images.logo} alt="Logo" />
+          <img
+            src={Images.logo}
+            alt="Logo"
+            width="640"
+            height="360"
+            className="h-auto w-full"
+          />
         </div>
         <div
           className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-black shadow-[0.2rem_0.2rem_black]"

@@ -1,5 +1,4 @@
 import { lazy, useRef } from 'react';
-import { Outlet } from 'react-router-dom';
 
 // Pages
 const Landing = lazy(() => import('@pages/landing'));
@@ -28,7 +27,6 @@ function Root() {
       <Details ref={locationRef.section3} />
       <Gallery ref={locationRef.section4} />
       <Location ref={locationRef.section5} />
-      <Outlet />
     </>
   );
 }
