@@ -1,15 +1,15 @@
-import { useRef } from 'react';
+import { lazy, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Pages
-import Landing from '@pages/landing';
+const Landing = lazy(() => import('@pages/landing'));
+const About = lazy(() => import('@pages/about'));
+const Details = lazy(() => import('@pages/details'));
+const Gallery = lazy(() => import('@pages/gallery'));
+const Location = lazy(() => import('@pages/status'));
 
 // Components
 import Nav from '@components/nav';
-import About from '@pages/about';
-import Details from '@pages/details';
-import Gallery from '@pages/gallery';
-import Location from '@pages/status';
 
 function Root() {
   const locationRef = {

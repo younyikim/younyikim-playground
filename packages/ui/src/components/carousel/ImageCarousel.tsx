@@ -1,5 +1,5 @@
-import React from 'react';
-import AutoScroll from 'embla-carousel-auto-scroll';
+import React, { useCallback } from 'react';
+import AutoScroll from 'embla-carousel-autoplay';
 
 // Components
 import {
@@ -23,7 +23,7 @@ const ImageCarousel = (props: ImageCarouselProps) => {
     itemClassName = '',
     imageContainerClassName = '',
     opts = { loop: true },
-    autoScrollOptions = { playOnInit: true, speed: 1 },
+    autoScrollOptions = { playOnInit: false, speed: 1 },
     isInfiniteLoop = true,
     loading = 'lazy',
     ...rest
@@ -33,17 +33,24 @@ const ImageCarousel = (props: ImageCarouselProps) => {
    * isInfiniteLoop 플래그에 따라 자동으로 캐러셀 자동 스크롤을 시작하거나 멈추는 함수
    * @param {CarouselApi} api 캐러셀 컴포넌트에서 제공하는 API 객체
    */
-  const autoPlay = (api: CarouselApi) => {
-    const autoScroll = api?.plugins()?.autoScroll;
+  const autoPlay = useCallback(
+    (api: CarouselApi) => {
+      const autoScroll = api?.plugins()?.autoplay;
 
-    if (!autoScroll || !isInfiniteLoop) return;
+      if (!autoScroll) return;
 
-    autoScroll.play;
-  };
+      if (isInfiniteLoop) {
+        autoScroll.play();
+      } else {
+        autoScroll.stop();
+      }
+    },
+    [isInfiniteLoop],
+  );
 
   return (
     <Carousel
-      className={`w-full max-w-sm ${carouselClassName}`}
+      className={`test w-full max-w-sm ${carouselClassName}`}
       plugins={[AutoScroll(autoScrollOptions)]}
       opts={opts}
       setApi={autoPlay}
