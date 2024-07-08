@@ -12,7 +12,9 @@ const index = () => {
         <img
           src={Images.landing2}
           alt="About Image"
-          className="h-full w-full object-cover"
+          className="h-auto w-full object-cover"
+          width="640"
+          height="360"
         />
       </div>
     </div>

@@ -32,7 +32,9 @@ const index = () => {
                   src={Images.spark}
                   loading="lazy"
                   alt="Spark icon"
-                  className="min-h-full min-w-full"
+                  className="h-auto min-h-full min-w-full"
+                  width="640"
+                  height="360"
                 />
               </div>
               <p className="animate-fade-up font-gulf stroke z-10 text-center text-7xl tracking-wide text-white">
@@ -94,7 +96,13 @@ const index = () => {
           faceContent={
             <div className="relative box-border flex h-full flex-col items-center justify-center">
               <div className="absolute z-0">
-                <img src={Images.starAlert} alt="Alert Star" loading="lazy" />
+                <img
+                  src={Images.starAlert}
+                  alt="Alert Star"
+                  loading="lazy"
+                  width={166}
+                  height={166}
+                />
               </div>
               <p className="font-gulf z-10 text-center text-5xl tracking-wide text-white">
                 ALERT
@@ -127,7 +135,13 @@ const index = () => {
               <div
                 className={`transform ${selected === 4 ? 'origin-center rotate-90' : 'origin-center -rotate-12'} transition-transform duration-500 ease-in-out`}
               >
-                <img src={Images.dial} alt="Dial image" loading="lazy" />
+                <img
+                  src={Images.dial}
+                  alt="Dial image"
+                  loading="lazy"
+                  width={125}
+                  height={125}
+                />
               </div>
               <p
                 className={`font-gulf text-center text-5xl tracking-wide text-white ${selected === 4 ? 'opacity' : 'opacity-50'}`}
