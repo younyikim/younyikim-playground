@@ -8,6 +8,7 @@
     "format": "prettier --write .",
     "scaffolding:frontend": "scripts/scaffolding/create-react-project.sh",
     "som:service": "pnpm --filter @all-about-som/service",
+    "frontend-template": "pnpm --filter frontend-template",
     "ui": "pnpm --filter @younyikim/ui"
   },
   "lint-staged": {
