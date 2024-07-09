@@ -45,4 +45,4 @@ younyikim-playground/
 ### More Docs
 - [Monorepo 설치 및 실행 가이드](https://github.com/younyikim/younyikim-playground/blob/main/docs/monorepo-install.md)
 - [Monorepo Scaffolding 사용하기]()
-- [Monorepo 브랜치 관리 전략]()
+- [Monorepo 컨벤션 - 브랜치, 커밋](https://github.com/younyikim/younyikim-playground/blob/main/docs/monorepo-convention.md)
