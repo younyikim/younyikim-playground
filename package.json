@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "scaffolding:frontend": "scripts/scaffolding/create-react-project.sh",
     "som:service": "pnpm --filter @all-about-som/service",
     "ui": "pnpm --filter @younyikim/ui"
   },
