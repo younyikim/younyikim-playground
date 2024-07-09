@@ -37,7 +37,7 @@ younyikim-playground/
 | 프로젝트 | 설명 |
 |----------|------|
 | [프론트엔드 프로젝트 템플릿](https://github.com/younyikim/younyikim-playground/tree/main/packages/frontend-template) | 프론트엔드 프로젝트에 사용하는 Vite 기반 React, TypeScript 템플릿입니다. |
-| [프론트엔드 프로젝트 자동 생성 템플릿](https://github.com/younyikim/younyikim-playground/tree/main/scripts/scaffolding) | 프론트엔드 프로젝트 생성과 초기 설정을 자동화하는 스크립트입니다. |
+| [프론트엔드 프로젝트 자동 생성 스크립트](https://github.com/younyikim/younyikim-playground/tree/main/scripts/scaffolding) | 프론트엔드 프로젝트 생성과 초기 설정을 자동화하는 스크립트입니다. |
 
 
 -----
