@@ -34,3 +34,9 @@
 | 현재 솜이는 어디에? 페이지  |   |
 | ![Shot (4)](https://github.com/younyikim/younyikim-playground/assets/73516688/afe4635f-f169-42e4-87ac-bb6bc4812dbc) |  |
 
+
+## Blog Posts
+["우리집 강아지를 소개할게요" 프로젝트 성능 개선기]()   
+
+[shadcn/ui 기반 커스텀 UI 라이브러리 만들기]()
+
