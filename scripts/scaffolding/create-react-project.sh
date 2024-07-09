@@ -37,8 +37,16 @@ echo "✅ 새로운 프로젝트가 생성되었습니다."
 SECOND_LEVEL_DIR=$(echo "$PROJECT_PATH" | cut -d'/' -f2)
 
 # 새로운 프로젝트의 packgae.json의 name 필드 설정
-# ex) @all-about-som/service 형식
-PACKAGE_NAME="@${SECOND_LEVEL_DIR}/service"
+if [ $depth -eq 1 ]; then
+  # PROJECT_PATH의 '/'가 1개인 경우
+  # ex) @all-about-som/service 형식
+  PACKAGE_NAME="@${SECOND_LEVEL_DIR}/service"
+else
+  # PROJECT_PATH의 '/'가 2개 이상인 경우
+  # ex) apps/all-about-som/admin -> @all-about-som/admin 형식
+  IFS='/' read -ra parts <<< "$PROJECT_PATH"
+  PACKAGE_NAME=$(IFS='/'; echo "@${parts[*]:1}")
+fi
 
 # 새로운 프로젝트의 package.json 파일 경로
 PACKAGE_JSON_PATH=$PROJECT_PATH/package.json
@@ -89,8 +97,17 @@ fi
 pnpm install
 
 # 새로운 스크립트 이름
-# ex) apps/project-test/service -> project-test:service
-NEW_SCRIPT_NAME="$SECOND_LEVEL_DIR:service"
+if [ $depth -eq 1 ]; then
+  # PROJECT_PATH의 '/'가 1개인 경우
+  # ex) apps/project-test -> project-test:service
+  NEW_SCRIPT_NAME="$SECOND_LEVEL_DIR:service"
+else
+  # PROJECT_PATH의 '/'가 2개 이상인 경우
+  # ex) apps/project-test/admin -> project-test:admin
+  IFS='/' read -ra parts <<< "$PROJECT_PATH"
+  NEW_SCRIPT_NAME=$(IFS='/'; echo "${parts[*]:1}" | sed 's/\//:/')
+fi
+
 NEW_SCRIPT="pnpm --filter $PACKAGE_NAME"
 
 # Root package.json의 scripts 섹션에 새로운 스크립트를 추가합니다.
