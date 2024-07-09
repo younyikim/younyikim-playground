@@ -44,5 +44,5 @@ younyikim-playground/
 
 ### More Docs
 - [Monorepo 설치 및 실행 가이드](https://github.com/younyikim/younyikim-playground/blob/main/docs/monorepo-install.md)
-- [Monorepo Scaffolding 사용하기](https://github.com/younyikim/younyikim-playground/blob/main/docs/monorepo-scaffolding.md)
+- [Monorepo Scaffolding으로 새로운 프로젝트 시작하기](https://github.com/younyikim/younyikim-playground/blob/main/docs/monorepo-scaffolding.md)
 - [Monorepo 컨벤션 - 브랜치, 커밋](https://github.com/younyikim/younyikim-playground/blob/main/docs/monorepo-convention.md)
