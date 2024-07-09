@@ -1,5 +1,11 @@
+import { RouterProvider } from 'react-router-dom';
+import '@younyikim/ui/dist/style.css';
+
+// Utils
+import router from './utils/router';
+
 function App() {
-  return <h1>Vite 기반 React, TypeScript, Tailwind CSS 템플릿입니다.</h1>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
