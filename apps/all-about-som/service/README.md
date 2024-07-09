@@ -17,3 +17,14 @@
   <img alt="@younyikim.ui" src="https://img.shields.io/badge/-@younyikim.ui-45b8d8?style=for-the-badge&logoColor=white" />
 </p>
 
+## Content
+
+|   |   |
+|---|---|
+| ![Shot](https://github.com/younyikim/younyikim-playground/assets/73516688/ea78ef31-85a6-4f86-96e8-ea81e2f46c1d) | ![Shot (1)](https://github.com/younyikim/younyikim-playground/assets/73516688/d5f784a2-87ab-42cf-adbd-435828c8cda1) |
+| 랜딩페이지  | About 페이지  |
+| ![Shot (2)](https://github.com/younyikim/younyikim-playground/assets/73516688/b735dfc1-18da-4f1f-8a51-f939135d57ba) | ![Shot (3)](https://github.com/younyikim/younyikim-playground/assets/73516688/21192fcf-770f-43bd-a0d7-0886400c6b7c) |
+| Detail 페이지  | Gallery  |
+| ![Shot (4)](https://github.com/younyikim/younyikim-playground/assets/73516688/afe4635f-f169-42e4-87ac-bb6bc4812dbc) |  |
+| 현재 솜이는 어디에? 페이지  |   |
+
