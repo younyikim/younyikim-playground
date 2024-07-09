@@ -12,8 +12,7 @@
     "outDir": "dist",
     "jsx": "react-jsx",
 
-    /* 절대 경로 설정 */
-    "baseUrl": ".", // 이 경우는 tsconfig.json이 존재하는 루트 디렉토리를 기준으로 삼는다.
+    "baseUrl": ".",
     "paths": {
       "@*": ["src/*"],
       "@pages/*": ["src/pages/*"],
