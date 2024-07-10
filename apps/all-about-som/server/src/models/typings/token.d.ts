@@ -3,3 +3,7 @@ export interface IToken {
   refreshToken: string;
   createdAt: Date;
 }
+
+export interface Payload {
+  user_id: string;
+}
