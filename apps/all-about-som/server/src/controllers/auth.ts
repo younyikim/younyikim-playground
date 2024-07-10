@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 
 // models
 import User from '../models/user';
@@ -25,11 +25,7 @@ const userWithEncodePassword = async ({ email, password, name }: IUser) => {
   return user;
 };
 
-export const signUp = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const signUp = async (req: Request, res: Response) => {
   try {
     const { email } = req.body;
     const user = await User.findOne({ email });
@@ -43,6 +39,7 @@ export const signUp = async (
     // 유저 생성 성공
     res.status(201).json({ message: 'User created' });
   } catch (error) {
-    next(error);
+    console.error('Error Sign Up:', error);
+    return null;
   }
 };

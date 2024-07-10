@@ -1,9 +1,7 @@
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 // Typings
 import { IUser } from './typings/user';
-
-const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   email: {
@@ -20,6 +18,6 @@ const userSchema = new Schema({
   },
 });
 
-const User = mongoose.model<IUser>('User', userSchema);
+const User = model<IUser>('User', userSchema);
 
 export default User;
