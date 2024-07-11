@@ -28,4 +28,14 @@ export default defineConfig({
       },
     ],
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        // '/api/posts' 요청 -> 'http://localhost:8080/posts'로 변환
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });

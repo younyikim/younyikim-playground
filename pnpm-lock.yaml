@@ -188,6 +188,9 @@ importers:
 
   apps/all-about-som/service:
     dependencies:
+      '@types/qs':
+        specifier: ^6.9.15
+        version: 6.9.15
       '@younyikim/ui':
         specifier: workspace:*
         version: link:../../../packages/ui
@@ -200,6 +203,9 @@ importers:
       lottie-web:
         specifier: ^5.12.2
         version: 5.12.2
+      qs:
+        specifier: ^6.12.3
+        version: 6.12.3
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -5796,6 +5802,10 @@ packages:
 
   qs@6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
+    engines: {node: '>=0.6'}
+
+  qs@6.12.3:
+    resolution: {integrity: sha512-AWJm14H1vVaO/iNZ4/hO+HyaTehuy9nRqVdkTqlJt0HWvBiBIEXFmb4C0DGeYo3Xes9rrEW+TxHsaigCbN5ICQ==}
     engines: {node: '>=0.6'}
 
   queue-lit@1.5.2:
@@ -13079,6 +13089,10 @@ snapshots:
   punycode@2.3.1: {}
 
   qs@6.11.0:
+    dependencies:
+      side-channel: 1.0.6
+
+  qs@6.12.3:
     dependencies:
       side-channel: 1.0.6
 
