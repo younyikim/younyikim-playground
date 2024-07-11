@@ -3,8 +3,8 @@
  */
 export const apiEndpoints = {
   auth: {
-    signIn: '/signin',
-    token: '/token',
+    signIn: 'auth/signin',
+    token: 'auth/token',
   },
   admin: {
     status: '/status',

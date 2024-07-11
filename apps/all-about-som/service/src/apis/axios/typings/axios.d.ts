@@ -1,3 +1,1 @@
-export interface ParamsType {
-  [key: string]: unknown;
-}
+export interface ParamsType extends Record<string | number | symbol, unknown> {}
