@@ -1,0 +1,23 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@models": ["src/models/*"],
+      "@controllers": ["src/controllers/*"],
+      "@routes": ["src/routes/*"],
+      "@utils": ["src/utils/*"],
+      "@middlewares": ["src/middlewares/*"]
+    },
+
+    "typeRoots": ["./src/types", "./node_modules/@types"]
+  },
+  "include": ["src/**/*"]
+}
