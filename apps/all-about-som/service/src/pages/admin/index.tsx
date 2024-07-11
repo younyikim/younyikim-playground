@@ -1,5 +1,7 @@
+import { Outlet } from 'react-router-dom';
+
 const index = () => {
-  return <div>Admin</div>;
+  return <Outlet />;
 };
 
 export default index;
