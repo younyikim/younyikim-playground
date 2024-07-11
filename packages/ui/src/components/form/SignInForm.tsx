@@ -17,21 +17,21 @@ import { Input } from '@components/ui/input';
 
 interface SignInFormProps {
   defaultValues?: {
-    email: string;
+    id: string;
     password: string;
   };
   onSubmit: (data: z.infer<typeof FormSchema>) => void;
   customFormSchema?:
     | ZodSchema<{
-        email: string;
+        id: string;
         password: string;
       }>
     | undefined;
 }
 
 const FormSchema = z.object({
-  email: z.string().email({
-    message: 'Invalid email format.',
+  id: z.string().min(2, {
+    message: 'ID must be at least 2 characters.',
   }),
   password: z.string().min(6).max(100), // Adjust max length if needed
 });
@@ -39,7 +39,7 @@ const FormSchema = z.object({
 const SignInForm = (props: SignInFormProps) => {
   const {
     defaultValues = {
-      email: '',
+      id: '',
       password: '',
     },
     onSubmit,
@@ -58,14 +58,14 @@ const SignInForm = (props: SignInFormProps) => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <FormField
           control={form.control}
-          name="email"
+          name="id"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-2xl">Email</FormLabel>
+              <FormLabel className="text-2xl">id</FormLabel>
               <FormControl>
                 <Input
-                  type="email"
-                  placeholder="Enter your email"
+                  type="id"
+                  placeholder="Enter your id"
                   className="h-20 text-2xl"
                   {...field}
                 />

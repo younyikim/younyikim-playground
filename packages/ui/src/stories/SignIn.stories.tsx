@@ -6,7 +6,7 @@ import { SignInForm } from '@components/form';
 
 // SignInForm 컴포넌트의 Prop 타입 정의
 interface SignInProps {
-  onSubmit: (data: { email: string; password: string }) => void;
+  onSubmit: (data: { id: string; password: string }) => void;
 }
 
 const meta: Meta<React.FC<SignInProps>> = {
