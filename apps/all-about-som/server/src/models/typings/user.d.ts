@@ -1,8 +1,8 @@
 export interface IUser {
-  email: string;
+  userId: string;
   password: string;
   name: string;
-  refreshToken: string;
+  refreshToken?: string;
 }
 
 export interface TokenPayload {

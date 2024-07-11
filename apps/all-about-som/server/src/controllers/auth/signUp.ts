@@ -13,24 +13,24 @@ const createUserData = async (userInput: IUser) => {
   return user.save();
 };
 
-const userWithEncodePassword = async ({ email, password, name }: IUser) => {
+const userWithEncodePassword = async ({ userId, password, name }: IUser) => {
   // 비밀번호 암호화
   const hashedPassword = await bcrypt.hash(password, 12);
 
   // User 스키마를 사용해 도큐먼트(객체) 생성
   const user = new User({
-    email,
+    userId,
     password: hashedPassword,
     name,
-    refreshToken: '',
+    refreshToken: null,
   });
   return user;
 };
 
 export const signUp = async (req: Request, res: Response) => {
   try {
-    const { email } = req.body;
-    const user = await User.findOne({ email });
+    const { userId } = req.body;
+    const user = await User.findOne({ userId });
 
     if (user) {
       throw new Error(`이미 존재하는 이메일입니다. 다시 입력해주세요.`);

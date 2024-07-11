@@ -4,7 +4,7 @@ import { Schema, model } from 'mongoose';
 import { IUser } from './typings/user';
 
 const userSchema = new Schema({
-  email: {
+  userId: {
     type: String,
     required: true,
   },
@@ -18,7 +18,7 @@ const userSchema = new Schema({
   },
   refreshToken: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 

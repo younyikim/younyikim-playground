@@ -6,13 +6,13 @@ import User from '@/models/user';
 import { generateRefreshToken, generateToken } from '@/utils/jwtUtil';
 
 export const signIn = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { userId, password } = req.body;
 
   // 이메일 검증
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ userId });
 
   if (!user) {
-    return res.status(401).json({ message: 'Invalid email' });
+    return res.status(401).json({ message: 'Invalid userId' });
   }
 
   // 비밀번호 검증
