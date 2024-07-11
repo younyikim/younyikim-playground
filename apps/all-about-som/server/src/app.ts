@@ -8,7 +8,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
 // Routes
-import { router } from './routes';
+import { router } from '@/routes';
 
 // dotenv 모듈을 사용해 환경변수 로드
 dotenv.config();
