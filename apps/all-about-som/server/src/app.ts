@@ -25,6 +25,7 @@ app.use(
 app.use(comperssion());
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 router(app);
 

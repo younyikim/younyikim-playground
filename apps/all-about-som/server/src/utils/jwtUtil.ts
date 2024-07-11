@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { TokenExpiredError } from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 // Models
@@ -38,24 +38,35 @@ const verifyAccessToken = (token: string) => {
       id: decoded.id,
     };
   } catch (error) {
-    return {
-      ok: false,
-      message: error,
-    };
+    if (error instanceof TokenExpiredError) {
+      return {
+        ok: false,
+        message: 'Token expired',
+      };
+    } else {
+      return {
+        ok: false,
+        message: error,
+      };
+    }
   }
 };
 
 // Refresh Token 검증
-const verifyRefreshToken = async (token: string, id: string) => {
-  const user = await User.findOne({ id });
+const verifyRefreshToken = (token: string, id: string) => {
+  try {
+    jwt.verify(token, JWT_KEY) as TokenPayload;
 
-  const decoded = jwt.verify(token, JWT_KEY) as TokenPayload;
+    User.findOne({ _id: id }).then((data) => {
+      if (!data || data.refreshToken !== token) {
+        return false;
+      }
+    });
 
-  if (decoded.id !== id) return false;
-
-  if (!user || user.refreshToken !== token) return false;
-
-  return true;
+    return true;
+  } catch (error) {
+    return false;
+  }
 };
 
 export {
