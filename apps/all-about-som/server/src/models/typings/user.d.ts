@@ -6,5 +6,5 @@ export interface IUser {
 }
 
 export interface TokenPayload {
-  user_id: string;
+  id: ObjectId;
 }

@@ -35,7 +35,7 @@ const verifyAccessToken = (token: string) => {
 
     return {
       ok: true,
-      user_id: decoded.user_id,
+      id: decoded.id,
     };
   } catch (error) {
     return {
@@ -46,12 +46,12 @@ const verifyAccessToken = (token: string) => {
 };
 
 // Refresh Token 검증
-const verifyRefreshToken = async (token: string, user_id: string) => {
-  const user = await User.findOne({ user_id });
+const verifyRefreshToken = async (token: string, id: string) => {
+  const user = await User.findOne({ id });
 
   const decoded = jwt.verify(token, JWT_KEY) as TokenPayload;
 
-  if (decoded.user_id !== user_id) return false;
+  if (decoded.id !== id) return false;
 
   if (!user || user.refreshToken !== token) return false;
 
