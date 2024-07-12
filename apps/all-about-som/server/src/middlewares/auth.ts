@@ -13,12 +13,12 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     const isValidToken = verifyAccessToken(token);
 
     // Access Token이 검증된 경우, req에 값을 설정하고 다음 콜백함수로 전달
-    if (isValidToken.ok) {
+    if (isValidToken.success) {
       req.id = isValidToken.id;
       next();
     } else {
       res.status(401).send({
-        ok: false,
+        success: false,
         message: isValidToken.message,
       });
     }

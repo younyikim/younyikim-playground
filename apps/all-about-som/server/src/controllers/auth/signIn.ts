@@ -8,6 +8,8 @@ import { generateRefreshToken, generateToken } from '@/utils/jwtUtil';
 export const signIn = async (req: Request, res: Response) => {
   const { userId, password } = req.body;
 
+  const isProduction = process.env.NODE_ENV === 'production';
+
   // 이메일 검증
   const user = await User.findOne({ userId });
 
@@ -30,12 +32,17 @@ export const signIn = async (req: Request, res: Response) => {
   user.refreshToken = refreshToken;
   await user.save();
 
-  // Client에 Access Token, Refresh Token 반환
-  res.status(200).send({
-    ok: true,
-    data: {
-      accessToken,
-      refreshToken,
-    },
+  // Access Token, Refresh Token을 cookie에 저장
+  res.cookie('accessToken', accessToken, {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: 'strict',
   });
+  res.cookie('refreshToken', refreshToken, {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: 'strict',
+  });
+
+  res.status(200).json({ success: true, message: 'Logged in successfully' });
 };
