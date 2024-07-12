@@ -1,3 +1,4 @@
 import { usePostSignIn } from './usePostSignIn';
+import { useFetchVerify } from './useFetchVerify';
 
-export { usePostSignIn };
+export { usePostSignIn, useFetchVerify };

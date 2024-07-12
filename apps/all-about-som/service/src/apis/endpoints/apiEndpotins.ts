@@ -3,8 +3,9 @@
  */
 export const apiEndpoints = {
   auth: {
-    signIn: 'auth/signin',
+    signIn: 'auth/sign-in',
     token: 'auth/token',
+    verify: 'auth/verify',
   },
   admin: {
     status: '/status',
