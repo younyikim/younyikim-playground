@@ -10,6 +10,9 @@ import Admin from '@pages/admin';
 import SignIn from '@pages/admin/components/signIn';
 import Status from '@pages/admin/components/status';
 
+// Components
+import ProtectedRoute from '@components/protectedRoute';
+
 export const router: ReturnType<typeof createMemoryRouter> =
   createBrowserRouter([
     {
@@ -30,7 +33,11 @@ export const router: ReturnType<typeof createMemoryRouter> =
         },
         {
           path: 'status',
-          element: <Status />,
+          element: (
+            <ProtectedRoute>
+              <Status />
+            </ProtectedRoute>
+          ),
         },
       ],
     },
