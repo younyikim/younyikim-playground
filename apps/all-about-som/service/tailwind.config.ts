@@ -241,12 +241,6 @@ module.exports = {
         96: '9.6rem',
       },
     },
-    height: {
-      'real-screen': 'calc(var(--vh) * 100)',
-    },
-    minHeight: {
-      'real-screen': 'calc(var(--vh) * 100)',
-    },
   },
   plugins: [
     require('tailwindcss-animate'),
