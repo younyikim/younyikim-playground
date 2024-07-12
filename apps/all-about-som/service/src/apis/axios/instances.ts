@@ -17,6 +17,7 @@ const createAxiosInstance = (baseUrl?: string) => {
     headers: {
       'Content-Type': 'application/json',
     },
+    withCredentials: true,
   });
 };
 
