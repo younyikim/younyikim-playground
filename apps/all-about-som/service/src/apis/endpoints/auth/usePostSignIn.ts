@@ -1,9 +1,14 @@
 import { useMutation } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 // Apis
 import { http } from '@apis/axios';
 import { apiEndpoints } from '@apis/endpoints/apiEndpotins';
 
+// Utils
+import { routes } from '@utils/router';
+
+// Typings
 import { SignInParams } from '@apis/endpoints/auth/typings';
 
 const mutationFn = (params: SignInParams) => {
@@ -14,7 +19,11 @@ const mutationFn = (params: SignInParams) => {
 };
 
 export const usePostSignIn = () => {
+  const navigate = useNavigate();
   return useMutation({
     mutationFn,
+    onSuccess: () => {
+      navigate(routes.admin.status);
+    },
   });
 };

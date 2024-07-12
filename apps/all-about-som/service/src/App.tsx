@@ -6,7 +6,7 @@ import '@younyikim/ui/dist/style.css';
 import { queryClient } from '@apis/react-query';
 
 // Utils
-import router from '@utils/router';
+import { router } from '@utils/router';
 
 function App() {
   return (
