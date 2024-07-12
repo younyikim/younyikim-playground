@@ -21,17 +21,24 @@ export const verifySignIn = (req: Request, res: Response) => {
     // Access Token이 유효하지 않은 경우
     if (authVerifiedResult.success === false) {
       // Access Token 재발급 요청
-      token(req, res);
-      return;
+      if (
+        authVerifiedResult?.message &&
+        authVerifiedResult.message === 'Token expired'
+      ) {
+        token(req, res);
+        return;
+      }
+
+      return res.status(401).send({ message: 'Unauthorized user' });
     }
 
     // 유효한 경우
-    res.status(200).json({
+    return res.status(200).send({
       success: true,
       message: 'Authorized user',
     });
   } else {
     // Access Token이 존재하지 않는 경우
-    res.status(401).json({ message: 'Unauthorized user' });
+    return res.status(401).send({ message: 'Unauthorized user' });
   }
 };
