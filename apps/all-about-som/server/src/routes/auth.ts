@@ -16,6 +16,6 @@ router.post('/sign-up', signUp);
 router.post('/sign-in', signIn);
 router.post('/sign-out', signOut);
 router.post('/token', token);
-router.post('/verify', verifySignIn);
+router.get('/verify', verifySignIn);
 
 export default router;
