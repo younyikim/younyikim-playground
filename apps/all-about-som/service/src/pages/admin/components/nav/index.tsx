@@ -10,7 +10,7 @@ import { Button } from '@younyikim/ui';
 
 const index = (props: AdminNavProps) => {
   const { title } = props;
-  const { menu, isMenuOpen, setIsMenuOpen, handleMenuClick } =
+  const { menu, isMenuOpen, setIsMenuOpen, handleMenuClick, mutate } =
     useAdminNavigation();
 
   return (
@@ -57,9 +57,7 @@ const index = (props: AdminNavProps) => {
           variant="secondary"
           size="xl"
           className="w-2/3 text-lg"
-          onClick={() => {
-            console.log('test');
-          }}
+          onClick={() => mutate()}
         >
           로그아웃
         </Button>
