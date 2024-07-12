@@ -5,10 +5,10 @@ import bcrypt from 'bcryptjs';
 import User from '@/models/user';
 import { generateRefreshToken, generateToken } from '@/utils/jwtUtil';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export const signIn = async (req: Request, res: Response) => {
   const { userId, password } = req.body;
-
-  const isProduction = process.env.NODE_ENV === 'production';
 
   // 이메일 검증
   const user = await User.findOne({ userId });

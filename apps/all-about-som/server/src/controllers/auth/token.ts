@@ -5,11 +5,13 @@ import jwt from 'jsonwebtoken';
 import { generateToken, verifyAccessToken, verifyRefreshToken } from '@/utils';
 import { TokenPayload } from '@/models/typings/user';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export const token = async (req: Request, res: Response) => {
   // Headers에 Access Token, Refresh Token 존재 여부 확인
-  if (req.headers.authorization && req.body.refresh_token) {
-    const accessToken = req.headers.authorization.split('Bearer ')[1];
-    const refreshToken = req.body.refresh_token;
+  if (req.cookies.accessToken && req.cookies.refreshToken) {
+    const accessToken = req.cookies.accessToken;
+    const refreshToken = req.cookies.refreshToken;
 
     // Access Token 검증
     const authVerfiedResult = verifyAccessToken(accessToken);
@@ -43,12 +45,15 @@ export const token = async (req: Request, res: Response) => {
         // 2. Access Token만 만료된 경우 => Access Token 재발급
         const newAccessToken = generateToken({ id: decoded.id });
 
-        res.status(200).send({
+        res.cookie('accessToken', newAccessToken, {
+          httpOnly: true,
+          secure: isProduction,
+          sameSite: 'strict',
+        });
+
+        res.status(200).json({
           success: true,
-          data: {
-            accessToken: newAccessToken,
-            refreshToken,
-          },
+          message: 'Access token successfully refreshed',
         });
       }
     } else {
