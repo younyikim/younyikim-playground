@@ -1,5 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
+import { toast } from '@younyikim/ui';
 
 // Apis
 import { http } from '@apis/axios';
@@ -24,6 +25,15 @@ export const usePostSignIn = () => {
     mutationFn,
     onSuccess: () => {
       navigate(routes.admin.status);
+    },
+    onError: () => {
+      toast({
+        variant: 'destructive',
+        title: '로그인 실패',
+        titleClassName: 'text-xl',
+        description: '다시 시도해주세요.',
+        descriptionClassName: 'text-lg',
+      });
     },
   });
 };

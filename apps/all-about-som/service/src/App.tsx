@@ -1,5 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { Toaster } from '@younyikim/ui';
 import '@younyikim/ui/dist/style.css';
 
 // Apis
@@ -12,6 +13,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      <Toaster />
     </QueryClientProvider>
   );
 }
