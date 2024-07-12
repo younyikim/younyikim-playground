@@ -88,6 +88,7 @@ const SignInForm = (props: SignInFormProps) => {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
