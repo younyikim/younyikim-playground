@@ -61,12 +61,12 @@ const SignInForm = (props: SignInFormProps) => {
           name="id"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-2xl">id</FormLabel>
+              <FormLabel className="text-lg">id</FormLabel>
               <FormControl>
                 <Input
                   type="id"
                   placeholder="Enter your id"
-                  className="h-20 text-2xl"
+                  className="h-20 text-lg"
                   {...field}
                 />
               </FormControl>
@@ -79,12 +79,12 @@ const SignInForm = (props: SignInFormProps) => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-2xl">Password</FormLabel>
+              <FormLabel className="text-lg">Password</FormLabel>
               <FormControl>
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  className="h-20 text-2xl"
+                  className="h-20 text-lg"
                   {...field}
                 />
               </FormControl>
@@ -93,7 +93,7 @@ const SignInForm = (props: SignInFormProps) => {
           )}
         />
         <div className="flex w-full items-center justify-end">
-          <Button type="submit" size={'xl'} className="w-full text-2xl">
+          <Button type="submit" size={'xl'} className="w-full text-lg">
             Login
           </Button>
         </div>
