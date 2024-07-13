@@ -8,6 +8,7 @@ import { apiEndpoints } from '@apis/endpoints/apiEndpotins';
 
 // Utils
 import { routes } from '@utils/router';
+import { IS_AUTH_KEY } from '@utils/constant';
 
 // Typings
 import { SignInParams } from '@apis/endpoints/auth/typings';
@@ -24,6 +25,7 @@ export const usePostSignIn = () => {
   return useMutation({
     mutationFn,
     onSuccess: () => {
+      localStorage.setItem(IS_AUTH_KEY, 'true');
       navigate(routes.admin.status);
     },
     onError: () => {

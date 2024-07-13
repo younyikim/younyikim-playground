@@ -6,7 +6,6 @@ export const apiEndpoints = {
     signIn: 'auth/sign-in',
     signOut: 'auth/sign-out',
     token: 'auth/token',
-    verify: 'auth/verify',
   },
   admin: {
     status: '/status',

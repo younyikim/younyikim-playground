@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { toast } from '@younyikim/ui';
 
@@ -8,23 +8,21 @@ import { apiEndpoints } from '@apis/endpoints/apiEndpotins';
 
 // Utils
 import { routes } from '@utils/router';
+import { IS_AUTH_KEY } from '@utils/constant';
 
 // Typings
 import { SuccessDto } from '@apis/endpoints/typings';
-import { queryKeys } from '@apis/endpoints/query.key';
 
 const mutationFn = () => {
   return http.post<SuccessDto>(apiEndpoints.auth.signOut);
 };
 
 export const usePostSignOut = () => {
-  const queryClient = useQueryClient();
-
   const navigate = useNavigate();
   return useMutation({
     mutationFn,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.auth.verify });
+      localStorage.removeItem(IS_AUTH_KEY);
       navigate(routes.admin.signIn);
     },
     onError: () => {

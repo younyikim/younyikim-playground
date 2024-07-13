@@ -3,24 +3,28 @@ import { useNavigate } from 'react-router-dom';
 
 // Apis
 import { usePostSignIn } from '@apis/endpoints/auth/usePostSignIn';
-import { useFetchVerify } from '@apis/endpoints';
+
+// Utils
+import { routes } from '@utils/router';
+import { IS_AUTH_KEY } from '@utils/constant';
 
 // Typings
 import { SignInParams } from '@apis/endpoints/auth/typings';
-import { routes } from '@utils/router';
 
 const useSignIn = () => {
   const navigate = useNavigate();
 
+  // 유저의 로그인 여부 확인
+  const isAuth = localStorage.getItem(IS_AUTH_KEY);
+
   const { mutate } = usePostSignIn();
-  const { data } = useFetchVerify();
 
   useEffect(() => {
-    // 유저의 로그인 여부 확인
-    if (data && data.success) {
+    // 로그인한 유저인 경우, 관리자 메인 페이지로 이동
+    if (isAuth) {
       navigate(routes.admin.status);
     }
-  }, [data]);
+  }, [isAuth]);
 
   // 로그인 버튼 핸들러
   const handleSubmit = (data: SignInParams) => {

@@ -1,7 +1,9 @@
-import { useFetchVerify } from '@apis/endpoints';
-import { routes } from '@utils/router';
 import { ReactNode, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// Utils
+import { IS_AUTH_KEY } from '@utils/constant';
+import { routes } from '@utils/router';
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -16,16 +18,15 @@ interface ProtectedRouteProps {
 
 const index = ({ children }: ProtectedRouteProps) => {
   const navigate = useNavigate();
-
-  const isAuthorizedUser = useFetchVerify();
+  const isAuth = localStorage.getItem(IS_AUTH_KEY);
 
   useEffect(() => {
-    if (!isAuthorizedUser || !isAuthorizedUser.data?.success) {
+    if (!isAuth) {
       navigate(routes.admin.signIn);
     }
-  }, [isAuthorizedUser?.data]);
+  }, [isAuth]);
 
-  if (isAuthorizedUser && isAuthorizedUser.data?.success) {
+  if (isAuth) {
     return <>{children}</>;
   }
 
