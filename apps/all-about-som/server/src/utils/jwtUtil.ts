@@ -34,18 +34,18 @@ const verifyAccessToken = (token: string) => {
     const decoded = jwt.verify(token, JWT_KEY) as TokenPayload;
 
     return {
-      ok: true,
+      success: true,
       id: decoded.id,
     };
   } catch (error) {
     if (error instanceof TokenExpiredError) {
       return {
-        ok: false,
+        success: false,
         message: 'Token expired',
       };
     } else {
       return {
-        ok: false,
+        success: false,
         message: error,
       };
     }
