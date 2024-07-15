@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "routes/**",
+          "controllers/**",
+          "middleware/**",
+          "models/**",
+          "utils/**"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.ts"
+    }
+  ]
+}
