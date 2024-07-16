@@ -2,10 +2,10 @@ import jwt, { TokenExpiredError } from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 // Models
-import User from '@/models/user';
+import User from '../models/user';
 
 // Typings
-import { TokenPayload } from '@/models/typings/user';
+import { TokenPayload } from '../models/typings/user';
 
 dotenv.config();
 

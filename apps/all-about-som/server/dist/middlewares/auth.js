@@ -19,6 +19,12 @@ var verifyToken = function (req, res, next) {
             });
         }
     }
+    else {
+        res.status(401).send({
+            success: false,
+            message: 'Invalid user',
+        });
+    }
 };
 exports.verifyToken = verifyToken;
 //# sourceMappingURL=auth.js.map

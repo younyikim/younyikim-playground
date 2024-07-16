@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 
 // Controller
-import { token } from '@/controllers/auth';
+import { token } from '.';
 
 // Utils
-import { verifyAccessToken } from '@/utils';
+import { verifyAccessToken } from '../../utils';
 
 /**
  * @description 유저의 로그인 여부를 판별

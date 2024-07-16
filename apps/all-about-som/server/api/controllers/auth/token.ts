@@ -2,8 +2,12 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
 // Utils
-import { generateToken, verifyAccessToken, verifyRefreshToken } from '@/utils';
-import { TokenPayload } from '@/models/typings/user';
+import {
+  generateToken,
+  verifyAccessToken,
+  verifyRefreshToken,
+} from '../../utils';
+import { TokenPayload } from '../../models/typings/user';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

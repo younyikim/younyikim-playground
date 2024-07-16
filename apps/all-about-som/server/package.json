@@ -2,11 +2,11 @@
   "name": "@all-about-som/server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "nodemon --exec ts-node -r tsconfig-paths/register src/app.ts",
+    "start": "nodemon --exec ts-node -r tsconfig-paths/register api/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p . && tsc-alias"
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "",

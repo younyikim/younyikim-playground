@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 
 // Models
-import User from '@/models/user';
-import { generateRefreshToken, generateToken } from '@/utils/jwtUtil';
+import User from '../../models/user';
+import { generateRefreshToken, generateToken } from '../../utils/jwtUtil';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

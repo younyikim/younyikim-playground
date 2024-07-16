@@ -2,10 +2,10 @@ import bcrypt from 'bcryptjs';
 import { Request, Response } from 'express';
 
 // models
-import User from '@/models/user';
+import User from '../../models/user';
 
 // Typings
-import { IUser } from '@/models/typings/user';
+import { IUser } from '../../models/typings/user';
 
 // User를 객체화하고 DB에 저장하는 함수
 const createUserData = async (userInput: IUser) => {

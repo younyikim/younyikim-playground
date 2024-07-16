@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/middlewares/index.ts"],"names":[],"mappings":";;;AAAA,+BAAqC;AAE5B,4FAFA,kBAAW,OAEA"}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../api/middlewares/index.ts"],"names":[],"mappings":";;;AAAA,+BAAqC;AAE5B,4FAFA,kBAAW,OAEA"}

@@ -2,10 +2,10 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
 // Models
-import User from '@/models/user';
+import User from '../../models/user';
 
 // Typings
-import { TokenPayload } from '@/models/typings/user';
+import { TokenPayload } from '../../models/typings/user';
 
 export const signOut = async (req: Request, res: Response) => {
   try {

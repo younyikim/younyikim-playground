@@ -7,8 +7,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-// Routes
-import { router } from '@/routes';
+import { router } from './routes';
 
 // dotenv 모듈을 사용해 환경변수 로드
 dotenv.config();
@@ -44,4 +43,4 @@ mongoose
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log(err));
 
-export default app;
+module.exports = app;

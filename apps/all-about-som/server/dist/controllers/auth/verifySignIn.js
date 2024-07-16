@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifySignIn = void 0;
 // Controller
-var auth_1 = require("../../controllers/auth");
+var _1 = require(".");
 // Utils
 var utils_1 = require("../../utils");
 /**
@@ -20,7 +20,7 @@ var verifySignIn = function (req, res) {
             // Access Token 재발급 요청
             if ((authVerifiedResult === null || authVerifiedResult === void 0 ? void 0 : authVerifiedResult.message) &&
                 authVerifiedResult.message === 'Token expired') {
-                (0, auth_1.token)(req, res);
+                (0, _1.token)(req, res);
                 return;
             }
             return res.status(401).send({ message: 'Unauthorized user' });

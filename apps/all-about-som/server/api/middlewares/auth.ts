@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from 'express';
 
 // Utils
-import { verifyAccessToken } from '@/utils/jwtUtil';
+import { verifyAccessToken } from '../utils/jwtUtil';
 
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   const token = req.cookies.accessToken;
@@ -19,6 +19,11 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
         message: isValidToken.message,
       });
     }
+  } else {
+    res.status(401).send({
+      success: false,
+      message: 'Invalid user',
+    });
   }
 };
 

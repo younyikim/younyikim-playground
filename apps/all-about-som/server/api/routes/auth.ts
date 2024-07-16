@@ -7,7 +7,7 @@ import {
   token,
   signOut,
   verifySignIn,
-} from '@/controllers/auth';
+} from '../controllers/auth';
 
 const router = express.Router();
 
