@@ -216,6 +216,12 @@ importers:
         specifier: ^5.2.0
         version: 5.2.13(@types/node@20.14.2)
 
+  apps/all-about-som/test:
+    dependencies:
+      express:
+        specifier: ^4.19.2
+        version: 4.19.2
+
   apps/sample-server:
     dependencies:
       body-parser:
@@ -9294,7 +9300,7 @@ snapshots:
       dequal: 2.0.3
       lodash: 4.17.21
       memoizerific: 1.11.3
-      qs: 6.11.0
+      qs: 6.12.3
       tiny-invariant: 1.3.3
       ts-dedent: 2.2.0
       util-deprecate: 1.0.2
@@ -9367,7 +9373,7 @@ snapshots:
     dependencies:
       '@storybook/client-logger': 8.1.10
       memoizerific: 1.11.3
-      qs: 6.11.0
+      qs: 6.12.3
 
   '@storybook/telemetry@8.1.10(prettier@3.3.2)':
     dependencies:
