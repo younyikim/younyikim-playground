@@ -2,14 +2,27 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "module": "CommonJS",
+    "target": "ESNext",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "outDir": "./dist",
     "sourceMap": true,
     "noImplicitAny": true,
-
-    "baseUrl": ".",
-
-    "typeRoots": ["api/types", "./node_modules/@types"]
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "preserveValueImports": false,
+    "typeRoots": ["types", "./node_modules/@types"]
   },
-  "include": ["src/**/*", "api"]
+  "ts-node": {
+    "esm": true
+  },
+  "include": [
+    "app/**/*",
+    "controllers/**/*",
+    "routes/**/*",
+    "public/**/*",
+    "types/**/*",
+    "utils/**/*"
+  ]
 }

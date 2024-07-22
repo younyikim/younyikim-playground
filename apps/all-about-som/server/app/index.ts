@@ -7,10 +7,12 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-import { router } from './routes';
+import { router } from '../routes';
 
 // dotenv 모듈을 사용해 환경변수 로드
 dotenv.config();
+
+const isVercel = process.env.DEPLOYMENT_ENV === 'vercel';
 
 // Express 애플리케이션 생성 및 변수 할당
 const app = express();
@@ -31,9 +33,11 @@ router(app);
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+if (!isVercel) {
+  server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
 
 // Mongo DB 연결
 const MONGODB_URL = process.env.MONGODB_URL ?? '';
