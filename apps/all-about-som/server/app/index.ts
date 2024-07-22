@@ -28,6 +28,8 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+router(app);
+
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
 
@@ -44,7 +46,5 @@ mongoose
   .connect(MONGODB_URL)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log(err));
-
-router(app);
 
 module.exports = app;
