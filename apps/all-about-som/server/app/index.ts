@@ -36,10 +36,10 @@ server.listen(PORT, () => {
 });
 
 // Mongo DB 연결
-const MONGODB_URL = process.env.MONGODB_URL ?? '';
+const MONGODB_URI = process.env.MONGODB_URI ?? '';
 
 mongoose
-  .connect(MONGODB_URL)
+  .connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log(err));
 
