@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon --exec ts-node -r tsconfig-paths/register app/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsup app --clean --format cjs,esm --env.NODE_ENV production",
+    "vercel-build": "tsup app --clean --format cjs --env.NODE_ENV production --env.DEPLOYMENT_ENV vercel --out-dir api"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.7.0",
-    "mongoose": "^8.4.1"
+    "mongoose": "^8.4.1",
+    "tsup": "^8.2.2"
   }
 }
