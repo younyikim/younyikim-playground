@@ -5,7 +5,7 @@ import authRoutes from './auth';
 import statusRoutes from './status';
 
 // Middlewares
-import { verifyToken } from '../middlewares';
+import { verifyToken } from '../../middlewares';
 
 export const router = (app: Application) => {
   app.get('/', (_, res) => res.send({ message: 'Express on Vercel' }));

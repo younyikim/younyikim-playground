@@ -4,10 +4,10 @@
   "description": "All about dog server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec ts-node -r tsconfig-paths/register app/index.ts",
+    "start": "nodemon --exec ts-node -r tsconfig-paths/register api/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup app --clean --format cjs,esm --env.NODE_ENV production",
-    "vercel-build": "tsup app --clean --format cjs --env.NODE_ENV production --env.DEPLOYMENT_ENV vercel --out-dir api"
+    "build": "tsup api --clean --format cjs,esm --env.NODE_ENV production",
+    "vercel-build": "tsup api --clean --format cjs --env.NODE_ENV production --env.DEPLOYMENT_ENV vercel --out-dir dist"
   },
   "keywords": [],
   "author": "",

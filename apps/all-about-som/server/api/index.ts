@@ -7,7 +7,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-import { router } from '../routes';
+// Routes
+import authRoutes from './routes/auth';
+import statusRoutes from './routes/status';
 
 // dotenv 모듈을 사용해 환경변수 로드
 dotenv.config();
@@ -26,7 +28,13 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-router(app);
+app.get('/api', (_, res) => res.send({ message: 'Express on Vercel' }));
+//auth로 시작하는 모든 요청은 authRoutes에 정의된 라우터로 전달
+app.use('/api/auth', authRoutes);
+app.use('/api/status', statusRoutes);
+app.get('/api/test', (_, res) => {
+  res.send('Hello from server!');
+});
 
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;

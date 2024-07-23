@@ -18,9 +18,9 @@
     "esm": true
   },
   "include": [
-    "app/**/*",
+    "api/**/*",
     "controllers/**/*",
-    "routes/**/*",
+    "api/routes/**/*",
     "public/**/*",
     "types/**/*",
     "utils/**/*"
