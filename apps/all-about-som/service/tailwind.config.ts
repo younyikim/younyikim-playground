@@ -136,6 +136,7 @@ module.exports = {
         coral: '#FF6F61',
         purple: '#7B68EE',
         gray: '#D3D3D3',
+        'light-blue': '#ADD8E6',
       },
       fontFamily: {
         gulf: ['Gulf Display', 'sans-serif'],

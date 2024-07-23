@@ -15,7 +15,7 @@ const index = (props: AdminNavProps) => {
 
   return (
     <nav
-      className={`absolute bottom-auto top-0 z-50 flex h-full w-full cursor-pointer flex-col items-center justify-between md:max-w-[36rem] ${isMenuOpen ? 'bg-gray' : 'bg-transparent'}`}
+      className={`absolute bottom-auto top-0 z-50 flex w-full cursor-pointer flex-col items-center justify-between md:max-w-[36rem] ${isMenuOpen ? 'bg-light-blue h-full' : 'h-fit bg-transparent'}`}
     >
       <div className="flex h-fit w-full items-center justify-between p-16">
         <h3 className="text-2xl font-bold">{title}</h3>
@@ -36,7 +36,7 @@ const index = (props: AdminNavProps) => {
         </div>
       </div>
       <div
-        className={`flex w-full flex-grow flex-col items-center justify-start p-16 transition-all ease-in-out ${isMenuOpen ? 'bg-gray visible h-full duration-500' : 'hidden bg-transparent duration-500'}`}
+        className={`flex w-full flex-grow flex-col items-center justify-start p-16 transition-all ease-in-out ${isMenuOpen ? 'bg-light-blue visible h-full duration-500' : 'hidden bg-transparent duration-500'}`}
       >
         <ul className="flex flex-col gap-32">
           {menu.map(({ name, id, route }) => (
@@ -51,7 +51,7 @@ const index = (props: AdminNavProps) => {
         </ul>
       </div>
       <div
-        className={`${isMenuOpen ? 'bg-gray flex h-full w-full items-end justify-center py-20' : 'hidden'}`}
+        className={`${isMenuOpen ? 'bg-light-blue flex h-full w-full items-end justify-center py-20' : 'hidden'}`}
       >
         <Button
           variant="secondary"
