@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "preserveValueImports": false,
+    "baseUrl": ".",
     "typeRoots": ["types", "./node_modules/@types"]
   },
   "ts-node": {
@@ -23,6 +24,8 @@
     "api/routes/**/*",
     "public/**/*",
     "types/**/*",
-    "utils/**/*"
+    "utils/**/*",
+    "models/**/*",
+    "models/typings/*"
   ]
 }
