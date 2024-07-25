@@ -6,7 +6,8 @@ import { Button, Label, RadioGroup, RadioGroupItem } from '@younyikim/ui';
 import AdminNav from '@pages/admin/components/nav';
 
 const index = () => {
-  const { options, setSelectedValue, handleSaveClick } = useStatusAdmin();
+  const { options, selectedValue, setSelectedValue, handleSaveClick } =
+    useStatusAdmin();
 
   return (
     <section className="scrollbar-hide flex h-svh w-full flex-col items-center justify-start overflow-hidden bg-white px-20 pb-20">
@@ -14,6 +15,7 @@ const index = () => {
       <div className="mt-[8.7rem] h-full w-full p-16">
         <h3 className="text-xl">현재 솜이의 위치 변경하기</h3>
         <RadioGroup
+          value={selectedValue}
           defaultValue={options[0].value}
           className="pt-16"
           onValueChange={(value) => setSelectedValue(value)}

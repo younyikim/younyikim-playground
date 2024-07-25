@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Apis
-import { usePatchStatus } from '@apis/endpoints/status/usePatchStatus';
+import { useFetchStatus, usePatchStatus } from '@apis/endpoints/status';
 
 interface RadioOption {
   value: string;
@@ -25,12 +25,18 @@ const useStatus = () => {
   const [selectedValue, setSelectedValue] = useState(options[0].value);
 
   const { mutate } = usePatchStatus();
+  const { data } = useFetchStatus();
 
   const handleSaveClick = () => {
     mutate({ statusValue: selectedValue });
   };
 
-  return { options, setSelectedValue, handleSaveClick };
+  useEffect(() => {
+    if (data?.data) {
+      setSelectedValue(data.data.status);
+    }
+  }, [data]);
+  return { options, selectedValue, setSelectedValue, handleSaveClick };
 };
 
 export default useStatus;

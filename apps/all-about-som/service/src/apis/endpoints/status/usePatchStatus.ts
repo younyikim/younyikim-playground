@@ -1,8 +1,9 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 // Apis
 import { http } from '@apis/axios';
 import { apiEndpoints } from '@apis/endpoints/apiEndpoints';
+import { queryKeys } from '@apis/endpoints/query.key';
 
 type StatusParams = {
   statusValue: string;
@@ -13,9 +14,12 @@ const mutationFn = (params: StatusParams) => {
 };
 
 export const usePatchStatus = () => {
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn,
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.status });
       alert('저장되었습니다.');
     },
     onError: () => {
