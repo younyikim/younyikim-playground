@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 // Controller
 import { token } from '.';
@@ -12,7 +12,11 @@ import { verifyAccessToken } from '../../utils';
  * @param res
  * @returns
  */
-export const verifySignIn = (req: Request, res: Response) => {
+export const verifySignIn = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   if (req.cookies.accessToken) {
     const accessToken = req.cookies.accessToken;
 
@@ -33,10 +37,7 @@ export const verifySignIn = (req: Request, res: Response) => {
     }
 
     // 유효한 경우
-    return res.status(200).send({
-      success: true,
-      message: 'Authorized user',
-    });
+    next();
   } else {
     // Access Token이 존재하지 않는 경우
     return res.status(401).send({ message: 'Unauthorized user' });

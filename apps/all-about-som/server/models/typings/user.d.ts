@@ -3,6 +3,7 @@ export interface IUser {
   password: string;
   name: string;
   refreshToken?: string;
+  status: string;
 }
 
 export interface TokenPayload {

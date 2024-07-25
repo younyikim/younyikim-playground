@@ -20,6 +20,12 @@ const userSchema = new Schema({
     type: String,
     required: false,
   },
+  status: {
+    type: Schema.Types.ObjectId,
+    // Status 스키마 참조
+    ref: 'Status',
+    required: true,
+  },
 });
 
 const User = model<IUser>('User', userSchema);
