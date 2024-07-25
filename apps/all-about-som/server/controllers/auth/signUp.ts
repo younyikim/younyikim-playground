@@ -5,6 +5,9 @@ import { Request, Response } from 'express';
 import User from '../../models/user';
 import Status from '../../models/status';
 
+// Utils
+import { sendSuccess } from '../../utils';
+
 // Typings
 import { IUser } from '../../models/typings/user';
 
@@ -46,7 +49,7 @@ export const signUp = async (req: Request, res: Response) => {
     await createUserData(req.body);
 
     // 유저 생성 성공
-    res.status(201).json({ message: 'User created' });
+    sendSuccess(res, 'User created');
   } catch (error) {
     console.error('Error Sign Up:', error);
     return null;

@@ -6,7 +6,12 @@ import {
   generateToken,
   verifyAccessToken,
   verifyRefreshToken,
+  sendInternalError,
+  sendSuccess,
+  sendUnauthorized,
 } from '../../utils';
+
+// Typings
 import { TokenPayload } from '../../models/typings/user';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -24,10 +29,7 @@ export const token = async (req: Request, res: Response) => {
 
     // 유저 정보가 존재하지 않으면, 권한 없음 응답
     if (decoded === null) {
-      res.status(401).send({
-        success: false,
-        message: 'Unauthorized User',
-      });
+      sendUnauthorized(res);
     }
 
     // Refresh Token 검증
@@ -41,10 +43,7 @@ export const token = async (req: Request, res: Response) => {
     ) {
       // 1. Access Token과 Refresh Token 모두 만료된 경우 -> 재로그인
       if (!refreshVerifiedResult) {
-        res.status(401).send({
-          success: false,
-          message: 'Unauthorized User : Refresh Token expired',
-        });
+        sendUnauthorized(res, 'Unauthorized User : Refresh Token expired');
       } else {
         // 2. Access Token만 만료된 경우 => Access Token 재발급
         const newAccessToken = generateToken({ id: decoded.id });
@@ -55,23 +54,17 @@ export const token = async (req: Request, res: Response) => {
           sameSite: 'strict',
         });
 
-        res.status(200).json({
-          success: true,
-          message: 'Access token successfully refreshed',
-        });
+        sendSuccess(res, 'Access token successfully refreshed');
       }
     } else {
       // 3. Access Token이 만료되지 않은 경우 => 재발급 필요하지 않음
-      res.status(400).send({
-        success: false,
-        message: 'Acess token is not expired!',
-      });
+      sendInternalError(res, 'Access token is not expired!');
     }
   } else {
     // Headers에 Access Token이나 Refresh Token이 존재하지 않는 경우
-    res.status(400).send({
-      success: false,
-      message: 'Access Token or Refresh Token is missing in headers.',
-    });
+    sendInternalError(
+      res,
+      'Access Token or Refresh Token is missing in headers.',
+    );
   }
 };

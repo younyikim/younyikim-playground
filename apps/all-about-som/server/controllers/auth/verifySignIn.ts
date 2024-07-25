@@ -4,7 +4,7 @@ import { NextFunction, Request, Response } from 'express';
 import { token } from '.';
 
 // Utils
-import { verifyAccessToken } from '../../utils';
+import { verifyAccessToken, sendUnauthorized } from '../../utils';
 
 /**
  * @description 유저의 로그인 여부를 판별
@@ -33,13 +33,13 @@ export const verifySignIn = (
         return;
       }
 
-      return res.status(401).send({ message: 'Unauthorized user' });
+      return sendUnauthorized(res);
     }
 
     // 유효한 경우
     next();
   } else {
     // Access Token이 존재하지 않는 경우
-    return res.status(401).send({ message: 'Unauthorized user' });
+    return sendUnauthorized(res);
   }
 };

@@ -16,10 +16,13 @@ export const sendCreated = <T>(res: Response, message: string, data?: T) => {
   });
 };
 
-export const sendUnauthorized = (res: Response, message: string) => {
+export const sendUnauthorized = (
+  res: Response,
+  message = 'Unauthorized User',
+) => {
   res.status(401).json({
     status: 'error',
-    message,
+    message: message,
   });
 };
 
