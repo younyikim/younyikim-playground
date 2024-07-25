@@ -4,11 +4,13 @@ import express from 'express';
 import { verifyToken } from '../../middlewares';
 
 // Controllers
-import { updateStatus } from '../../controllers/status';
+import { updateStatus, fetchStatus } from '../../controllers/status';
 
 const router = express.Router();
 
 // 현재 솜이 위치 정보
+router.get('/', verifyToken, fetchStatus);
+// 현재 솜이 위치 정보 수정
 router.patch('/', verifyToken, updateStatus);
 
 export default router;
