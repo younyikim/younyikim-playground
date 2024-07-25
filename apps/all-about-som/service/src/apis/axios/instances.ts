@@ -4,7 +4,7 @@ import qs from 'qs';
 /**
  * @description API endpoints의 기본 경로
  */
-const apiUrl = '/api';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 /**
  * @description baseUrl을 기반으로 Axios Instance를 생성하는 함수
