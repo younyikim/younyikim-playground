@@ -4,7 +4,7 @@ import { toast } from '@younyikim/ui';
 
 // Apis
 import { http } from '@apis/axios';
-import { apiEndpoints } from '@apis/endpoints/apiEndpotins';
+import { apiEndpoints } from '@apis/endpoints/apiEndpoints';
 
 // Utils
 import { routes } from '@utils/router';

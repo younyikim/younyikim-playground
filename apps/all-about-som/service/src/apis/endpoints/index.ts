@@ -1,3 +1,3 @@
 export * from './auth';
-export * from './apiEndpotins';
+export * from './apiEndpoints';
 export * from './query.key';
