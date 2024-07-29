@@ -19,7 +19,6 @@
 ## 기능
 
 - Tree-shakeable 지원(사용하지 않은 컴포넌트는 번들에 포함되지 않음)
-- Dark mode 지원
 - 스타일 Override 및 Custom 가능
 
 ## 예시
