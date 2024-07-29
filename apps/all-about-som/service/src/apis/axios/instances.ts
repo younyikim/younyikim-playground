@@ -15,7 +15,6 @@ const createAxiosInstance = (baseUrl?: string) => {
     baseURL: baseUrl ?? apiUrl,
     paramsSerializer: (params) => qs.stringify(params),
     headers: {
-      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
     },
     withCredentials: true,
