@@ -8,7 +8,7 @@
 
 | 개발 기간  | 2024.06 ~ 2024.07  |
 |---|---|
-| **서비스 링크**  | [![forthebadge](https://github.com/younyikim/younyikim-playground/assets/73516688/dd9945e8-14e5-4483-a182-6fe8ec0a7b96)](https://younyikim-playground.vercel.app/)   |
+| **서비스 링크**  | [![forthebadge](https://github.com/younyikim/younyikim-playground/assets/73516688/dd9945e8-14e5-4483-a182-6fe8ec0a7b96)](https://all-about-my-dog.vercel.app/)   |
 
 
 ## Tech Stack
