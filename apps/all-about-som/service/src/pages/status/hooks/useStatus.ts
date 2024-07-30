@@ -1,11 +1,20 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 // Typings
-import { Status } from '@pages/status/typings';
+import { StatusType } from '@pages/status/typings';
+import { useFetchStatus } from '@apis/endpoints/status';
 
 const useStatus = () => {
   const [isTransitionOver, setIsTransitionOver] = useState(false);
-  const [currentStatus] = useState<Status>('home');
+  const [currentStatus, setCurrentStatus] = useState<StatusType>('집');
+
+  const { data } = useFetchStatus();
+
+  useEffect(() => {
+    if (data) {
+      setCurrentStatus(data);
+    }
+  }, [data]);
 
   const intersectionCallback = useCallback(
     (target: Element, isIntersecting?: boolean) => {

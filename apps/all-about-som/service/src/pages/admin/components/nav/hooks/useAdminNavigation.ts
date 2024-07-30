@@ -22,11 +22,16 @@ const useAdminNavigation = () => {
     navigate(route);
   };
 
+  const handleServiceLinkClick = () => {
+    navigate('/');
+  };
+
   return {
     menu,
     isMenuOpen,
     setIsMenuOpen,
     handleMenuClick,
+    handleServiceLinkClick,
     mutate,
   };
 };

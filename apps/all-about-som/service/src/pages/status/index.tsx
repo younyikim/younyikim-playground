@@ -10,7 +10,9 @@ import StatusCard from '@pages/status/components/statusCard';
 const index = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   const { isTransitionOver, currentStatus, intersectionCallback } = useStatus();
 
-  useIntersectionObserver(intersectionCallback, 'observe-status');
+  useIntersectionObserver(intersectionCallback, 'observe-status', {
+    threshold: 0.5,
+  });
 
   return (
     <section

@@ -32,10 +32,11 @@ const useStatus = () => {
   };
 
   useEffect(() => {
-    if (data?.data) {
-      setSelectedValue(data.data.status);
+    if (data) {
+      setSelectedValue(data);
     }
   }, [data]);
+
   return { options, selectedValue, setSelectedValue, handleSaveClick };
 };
 

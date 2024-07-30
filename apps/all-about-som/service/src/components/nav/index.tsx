@@ -9,9 +9,10 @@ import { NavProps } from '@components/nav/typings/nav';
 
 const index = (props: NavProps) => {
   const { locationRef } = props;
-  const { menu, isMenuOpen, setIsMenuOpen, handleMenuClick } = useNavigation({
-    locationRef,
-  });
+  const { menu, isMenuOpen, setIsMenuOpen, handleMenuClick, handleAdminClick } =
+    useNavigation({
+      locationRef,
+    });
 
   return (
     <nav
@@ -57,6 +58,17 @@ const index = (props: NavProps) => {
             </li>
           ))}
         </ul>
+
+        <div
+          className={`${isMenuOpen ? 'flex h-full w-full items-end justify-center gap-10' : 'hidden'}`}
+        >
+          <button
+            className="text-pink w-full bg-transparent text-sm"
+            onClick={handleAdminClick}
+          >
+            서비스 바로가기
+          </button>
+        </div>
       </div>
     </nav>
   );

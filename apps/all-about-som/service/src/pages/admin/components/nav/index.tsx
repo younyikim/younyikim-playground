@@ -10,8 +10,14 @@ import { Button } from '@younyikim/ui';
 
 const index = (props: AdminNavProps) => {
   const { title } = props;
-  const { menu, isMenuOpen, setIsMenuOpen, handleMenuClick, mutate } =
-    useAdminNavigation();
+  const {
+    menu,
+    isMenuOpen,
+    setIsMenuOpen,
+    handleMenuClick,
+    handleServiceLinkClick,
+    mutate,
+  } = useAdminNavigation();
 
   return (
     <nav
@@ -50,11 +56,20 @@ const index = (props: AdminNavProps) => {
           ))}
         </ul>
       </div>
+
       <div
-        className={`${isMenuOpen ? 'bg-light-blue flex h-full w-full items-end justify-center py-20' : 'hidden'}`}
+        className={`${isMenuOpen ? 'bg-light-blue flex h-full w-full items-end justify-center gap-10 p-20' : 'hidden'}`}
       >
         <Button
           variant="secondary"
+          size="xl"
+          className="w-2/3 text-lg"
+          onClick={handleServiceLinkClick}
+        >
+          서비스 바로가기
+        </Button>
+        <Button
+          variant="destructive"
           size="xl"
           className="w-2/3 text-lg"
           onClick={() => mutate()}

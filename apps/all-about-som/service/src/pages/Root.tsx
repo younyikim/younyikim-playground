@@ -1,4 +1,4 @@
-import { lazy, useRef } from 'react';
+import { Suspense, lazy, useRef } from 'react';
 
 // Pages
 const Landing = lazy(() => import('@pages/landing'));
@@ -9,6 +9,7 @@ const Location = lazy(() => import('@pages/status'));
 
 // Components
 import Nav from '@components/nav';
+import Loading from '@components/loading';
 
 function Root() {
   const locationRef = {
@@ -21,12 +22,14 @@ function Root() {
 
   return (
     <>
-      <Nav locationRef={locationRef} />
-      <Landing ref={locationRef.section1} />
-      <About ref={locationRef.section2} />
-      <Details ref={locationRef.section3} />
-      <Gallery ref={locationRef.section4} />
-      <Location ref={locationRef.section5} />
+      <Suspense fallback={<Loading />}>
+        <Nav locationRef={locationRef} />
+        <Landing ref={locationRef.section1} />
+        <About ref={locationRef.section2} />
+        <Details ref={locationRef.section3} />
+        <Gallery ref={locationRef.section4} />
+        <Location ref={locationRef.section5} />
+      </Suspense>
     </>
   );
 }
