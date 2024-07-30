@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Typings
 import { NavProps } from '@components/nav/typings/nav';
+import { routes } from '@utils/router';
 
 const menu = [
   { id: 'section1', name: 'HOME' },
@@ -13,6 +15,8 @@ const menu = [
 
 const useNavigation = (props: NavProps) => {
   const { locationRef } = props;
+
+  const navigate = useNavigate();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,7 +34,14 @@ const useNavigation = (props: NavProps) => {
     }
   };
 
-  return { menu, isMenuOpen, setIsMenuOpen, handleMenuClick };
+  /**
+   * 버튼 클릭시, 관리자 페이지로 라우팅
+   */
+  const handleAdminClick = () => {
+    navigate(routes.admin.signIn);
+  };
+
+  return { menu, isMenuOpen, setIsMenuOpen, handleMenuClick, handleAdminClick };
 };
 
 export default useNavigation;

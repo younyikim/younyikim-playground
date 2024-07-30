@@ -1,4 +1,4 @@
-import { lazy, useRef } from 'react';
+import { Suspense, lazy, useRef } from 'react';
 
 // Pages
 const Landing = lazy(() => import('@pages/landing'));
@@ -22,11 +22,13 @@ function Root() {
   return (
     <>
       <Nav locationRef={locationRef} />
-      <Landing ref={locationRef.section1} />
-      <About ref={locationRef.section2} />
-      <Details ref={locationRef.section3} />
-      <Gallery ref={locationRef.section4} />
-      <Location ref={locationRef.section5} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Landing ref={locationRef.section1} />
+        <About ref={locationRef.section2} />
+        <Details ref={locationRef.section3} />
+        <Gallery ref={locationRef.section4} />
+        <Location ref={locationRef.section5} />
+      </Suspense>
     </>
   );
 }
