@@ -9,6 +9,7 @@ const Location = lazy(() => import('@pages/status'));
 
 // Components
 import Nav from '@components/nav';
+import Loading from '@components/loading';
 
 function Root() {
   const locationRef = {
@@ -21,8 +22,8 @@ function Root() {
 
   return (
     <>
-      <Nav locationRef={locationRef} />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
+        <Nav locationRef={locationRef} />
         <Landing ref={locationRef.section1} />
         <About ref={locationRef.section2} />
         <Details ref={locationRef.section3} />
