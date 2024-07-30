@@ -43,12 +43,14 @@ export const signIn = async (req: Request, res: Response) => {
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
     secure: isProduction,
-    sameSite: 'strict',
+    sameSite: isProduction ? 'none' : 'lax',
+    path: '/',
   });
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     secure: isProduction,
-    sameSite: 'strict',
+    sameSite: isProduction ? 'none' : 'lax',
+    path: '/',
   });
 
   sendSuccess(res, 'Logged in successfully');

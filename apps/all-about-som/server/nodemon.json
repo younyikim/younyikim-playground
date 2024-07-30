@@ -1,5 +1,13 @@
 {
-  "watch": ["app", "controllers", "routes", "public", "types", "utils"],
+  "watch": [
+    "api",
+    "controllers",
+    "routes",
+    "public",
+    "types",
+    "utils",
+    "middlewares"
+  ],
   "ext": ".ts,.js",
-  "exec": "ts-node ./app/app.ts"
+  "exec": "ts-node ./api/index.ts"
 }
