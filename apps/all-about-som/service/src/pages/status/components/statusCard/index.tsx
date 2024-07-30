@@ -7,7 +7,7 @@ const index = (props: StatusCardProps) => {
 
   return (
     <>
-      {currentStatus === 'park' ? (
+      {currentStatus === '운동장' ? (
         <div className="bg-green flex h-full w-full flex-col items-center justify-center rounded-[2rem]">
           <h3 className="font-gulf text-yellow text-6xl">DOG</h3>
           <h3 className="font-gulf text-yellow text-6xl">PARK</h3>
@@ -20,7 +20,7 @@ const index = (props: StatusCardProps) => {
             className="h-auto w-full"
           />
         </div>
-      ) : currentStatus === 'home' ? (
+      ) : currentStatus === '집' ? (
         <div className="bg-yellow flex h-full w-full flex-col items-center justify-around rounded-[2rem]">
           <h3 className="font-gulf text-coral text-6xl">HOME</h3>
           <img
@@ -32,7 +32,7 @@ const index = (props: StatusCardProps) => {
             className="h-auto w-full"
           />
         </div>
-      ) : currentStatus === 'walk' ? (
+      ) : currentStatus === '산책' ? (
         <div className="bg-coral relative flex h-full w-full flex-col items-center justify-center rounded-[2rem]">
           <div className="absolute top-44">
             <h3 className="font-gulf text-yellow text-6xl">ON A</h3>
