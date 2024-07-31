@@ -9,7 +9,7 @@ import { updateStatus, fetchStatus } from '../../controllers/status';
 const router = express.Router();
 
 // 현재 솜이 위치 정보
-router.get('/', verifyToken, fetchStatus);
+router.get('/', fetchStatus);
 // 현재 솜이 위치 정보 수정
 router.patch('/', verifyToken, updateStatus);
 
