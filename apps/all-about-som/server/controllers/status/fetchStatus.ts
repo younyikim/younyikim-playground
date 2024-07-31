@@ -10,11 +10,18 @@ interface Status {
   value: string;
 }
 
-export const fetchStatus = async (req: Request, res: Response) => {
-  const userId = req.id;
+interface StatusParams {
+  userId?: string;
+}
+
+export const fetchStatus = async (
+  req: Request<StatusParams>,
+  res: Response,
+) => {
+  const userId = req.params.userId ?? process.env.DEFAULT_USERID ?? '';
 
   try {
-    const user = await User.findById(userId).populate<{ status: Status }>(
+    const user = await User.findOne({ userId }).populate<{ status: Status }>(
       'status',
     );
 
