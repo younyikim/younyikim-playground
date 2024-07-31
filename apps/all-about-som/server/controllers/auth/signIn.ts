@@ -43,13 +43,13 @@ export const signIn = async (req: Request, res: Response) => {
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction ? 'none' : 'lax',
+    sameSite: 'none',
     path: '/',
   });
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction ? 'none' : 'lax',
+    sameSite: 'none',
     path: '/',
   });
 
