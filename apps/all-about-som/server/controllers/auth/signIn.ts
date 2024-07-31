@@ -42,13 +42,11 @@ export const signIn = async (req: Request, res: Response) => {
     httpOnly: true,
     secure: true,
     sameSite: 'none',
-    domain: process.env.NODE_ENV === 'local' ? '.localhost' : '.vercel.app',
   });
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     secure: true,
     sameSite: 'none',
-    domain: process.env.NODE_ENV === 'local' ? '.localhost' : '.vercel.app',
   });
 
   sendSuccess(res, 'Logged in successfully');
