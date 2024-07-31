@@ -19,7 +19,10 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: ['https://all-about-my-dog.vercel.app'],
+    origin: [
+      'https://all-about-my-dog-server.vercel.app',
+      'http://localhost:5173',
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }),

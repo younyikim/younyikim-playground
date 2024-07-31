@@ -12,8 +12,6 @@ import {
   sendUnauthorized,
 } from '../../utils';
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 export const signIn = async (req: Request, res: Response) => {
   const { userId, password } = req.body;
 
@@ -42,15 +40,15 @@ export const signIn = async (req: Request, res: Response) => {
   // Access Token, Refresh Token을 cookie에 저장
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
-    secure: isProduction,
+    secure: true,
     sameSite: 'none',
-    path: '/',
+    domain: process.env.NODE_ENV === 'local' ? '.localhost' : '.vercel.app',
   });
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
-    secure: isProduction,
+    secure: true,
     sameSite: 'none',
-    path: '/',
+    domain: process.env.NODE_ENV === 'local' ? '.localhost' : '.vercel.app',
   });
 
   sendSuccess(res, 'Logged in successfully');
