@@ -14,8 +14,3 @@ pnpm install
 pnpm dev
 ```
 
-## Blog Posts
-
-["우리집 강아지를 소개할게요" 프로젝트 성능 개선기]()
-
-[shadcn/ui 기반 커스텀 UI 라이브러리 만들기]()
