@@ -12,7 +12,7 @@
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://all-about-my-dog.vercel.app"
+          "value": "https://all-about-som.kro.kr"
         },
         {
           "key": "Access-Control-Allow-Methods",
