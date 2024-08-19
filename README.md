@@ -23,7 +23,7 @@ younyikim-playground/
 
 | 프로젝트 | 설명 | 링크 |
 |----------|------|------|
-| [All about my dog](https://github.com/younyikim/younyikim-playground/tree/main/apps/all-about-som) | 우리집 강아지 솜이를 소개하는 포트폴리오 웹 사이트입니다. | [![forthebadge](https://github.com/younyikim/younyikim-playground/assets/73516688/dd9945e8-14e5-4483-a182-6fe8ec0a7b96)](https://younyikim-playground.vercel.app/) |
+| [All about my dog](https://github.com/younyikim/younyikim-playground/tree/main/apps/all-about-som) | 우리집 강아지 솜이를 소개하는 포트폴리오 웹 사이트입니다. | [![forthebadge](https://github.com/younyikim/younyikim-playground/assets/73516688/dd9945e8-14e5-4483-a182-6fe8ec0a7b96)](https://www.yk-playground.store/) |
 
 
 **패키지**
