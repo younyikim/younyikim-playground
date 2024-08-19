@@ -19,11 +19,12 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: [
-      'https://yk-playground.store',
-      'https://www.yk-playground.store',
-      'http://localhost:5173',
-    ],
+    origin: 'https://www.yk-playground.store',
+    // origin: [
+    //   'https://yk-playground.store',
+    //   'https://www.yk-playground.store',
+    //   'http://localhost:5173',
+    // ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
     allowedHeaders: [
       'Content-Type',
