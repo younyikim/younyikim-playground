@@ -21,7 +21,7 @@ app.use(
     credentials: true,
     origin: [
       'https://yk-playground.store',
-      /\.yk-playground\.store$/,
+      'https://www.yk-playground.store',
       'http://localhost:5173',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
