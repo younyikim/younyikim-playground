@@ -18,7 +18,7 @@ const index = (props: NavProps) => {
     <nav
       className={`absolute bottom-auto top-0 z-50 flex h-full w-full cursor-pointer flex-col items-center justify-between md:max-w-[36rem]`}
     >
-      <div className="flex h-fit w-full items-center justify-between p-16">
+      <div className="flex h-fit w-full items-center justify-between p-4">
         <div>
           <img
             src={Images.logo}
@@ -45,9 +45,9 @@ const index = (props: NavProps) => {
         </div>
       </div>
       <div
-        className={`flex w-full flex-grow flex-col items-center justify-start p-16 transition-all ease-in-out ${isMenuOpen ? 'bg-pink visible h-full duration-500' : 'hidden duration-500'}`}
+        className={`flex w-full flex-grow flex-col items-center justify-start p-4 transition-all ease-in-out ${isMenuOpen ? 'bg-pink visible h-full duration-500' : 'hidden duration-500'}`}
       >
-        <ul className="flex flex-col gap-32">
+        <ul className="flex flex-col gap-8">
           {menu.map(({ name, id }) => (
             <li
               key={id}
@@ -63,7 +63,7 @@ const index = (props: NavProps) => {
           className={`${isMenuOpen ? 'flex h-full w-full items-end justify-center gap-10' : 'hidden'}`}
         >
           <button
-            className="text-pink w-full bg-transparent text-sm"
+            className="text-pink w-full bg-transparent text-base"
             onClick={handleAdminClick}
           >
             서비스 바로가기
