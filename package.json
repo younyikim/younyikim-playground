@@ -7,10 +7,13 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "scaffolding:frontend": "scripts/scaffolding/create-react-project.sh",
+    "scaffolding:next": "scripts/scaffolding/create-next-project.sh",
     "frontend-template": "pnpm --filter frontend-template",
+    "next-template": "pnpm --filter next-template",
     "ui": "pnpm --filter @younyikim/ui",
     "all-about-som:service": "pnpm --filter @all-about-som/service",
-    "all-about-som:server": "pnpm --filter @all-about-som/server"
+    "all-about-som:server": "pnpm --filter @all-about-som/server",
+    "test-app:service": "pnpm --filter @test-app/service"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
