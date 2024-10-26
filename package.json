@@ -13,7 +13,8 @@
     "ui": "pnpm --filter @younyikim/ui",
     "all-about-som:service": "pnpm --filter @all-about-som/service",
     "all-about-som:server": "pnpm --filter @all-about-som/server",
-    "test-app:service": "pnpm --filter @test-app/service"
+    "test-app:service": "pnpm --filter @test-app/service",
+    "tour:service": "pnpm --filter @tour/service"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
