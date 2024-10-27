@@ -1,31 +1,31 @@
-export default function Page() {
-  const sections = [
-    { id: 'section1', content: 'Welcome to Section 1!' },
-    { id: 'section2', content: 'Here is Section 2!' },
-    { id: 'section3', content: 'Now you are in Section 3!' },
-    { id: 'section4', content: 'Finally, this is Section 4!' },
-  ];
+'use client';
 
+import Tour from '@/components/Tour';
+
+export default function Page() {
   return (
-    <section className="p-8">
-      <h1 className="mb-4 text-3xl font-bold">
+    <section className="p-8" id="my-selector">
+      <Tour />
+      <h1 className="mb-4 text-center text-3xl font-bold">
         Welcome to the Tour Demo - Reacy JoyRide
       </h1>
-      <button className="mb-8 rounded bg-blue-500 px-4 py-2 text-white">
-        Start Tour
-      </button>
 
-      <div>
-        {sections.map((section) => (
-          <div
-            key={section.id}
-            id={section.id}
-            className="mb-4 h-[500px] rounded-lg border border-gray-300 p-4"
-          >
-            <h2 className="text-2xl font-semibold">{section.content}</h2>
-            <p className="mt-2">Content for {section.content} goes here.</p>
-          </div>
-        ))}
+      <div className="mb-4 flex h-[500px] flex-col items-center justify-center rounded-lg border border-gray-300 p-4">
+        <div className="tour-upload relative">
+          <p className="mb-2 text-gray-700">Drag Files</p>
+          <p className="mb-4 text-gray-500">or</p>
+          <button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            Click here
+          </button>
+        </div>
+      </div>
+      <div className="flex gap-2">
+        <div className="tour-folder flex h-36 w-36 items-center justify-center rounded-lg bg-blue-500 text-white shadow-md">
+          <p>Box 1</p>
+        </div>
+        <div className="flex h-36 w-36 items-center justify-center rounded-lg bg-green-500 text-white shadow-md">
+          <p>Box 2</p>
+        </div>
       </div>
     </section>
   );
